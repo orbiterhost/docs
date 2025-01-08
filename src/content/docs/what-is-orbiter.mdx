@@ -2,3 +2,33 @@
 title: What is Orbiter?
 description: Learn how Orbiter works behind the scenes
 ---
+
+![orbiter-cover](../../assets/cover.jpg)
+
+You’ve probably caught on by now that Orbiter is a static site hosting provider, but it’s actually a bit more behind the scenes. With most traditional hosting providers you end up with walled gardens that hurt the end user. At Orbiter we’ve combatted this reality using technologies we were already familiar with: IPFS and Blockchain.
+
+## IPFS
+
+[IPFS](https://ipfs.io), or “InterPlanetary File System,” is a peer to peer file sharing network. You can think of it like a protocol such as HTTP, but with some pretty big differentiators:
+
+- Distributed - Instead of a single server IPFS is made up of a network of nodes that talk to each other
+- Content Addressable - Ever piece of content shared on IPFS gets a special Content Identifier, or “CID.” These are based on the contents of the file, meaning if you share the same file over and over you’ll get the same CID every time, an important attribute to verify content. They are also used as the address to the content on IPFS.
+- Immutable - Anything shared on IPFS is immutable, so it cannot change.
+
+These are powerful in terms of being able to host content that needs to be resistent and accessible beyond a walled garden, however it also does pose a challenge. Generally when you host a site on IPFS each new version means a new CID. You could spend a significant amount of energy trying to give your followers the newest CID, making sure they have the latest content. Many solutions to this problem have come and go, but one that we've decided to stick with is blockchain.
+
+## Blockchain
+
+Blockchains are digital ledgers, recording transactions or state, with many nodes confirming each block using cryptography. Out of the box you have a way to track state to it's origin, and who did it based on public/private key cryptography. In our mind this is perfect for tracking website versions on IPFS, so we used a new standard by [Pinata](https://pinata.cloud) called [IPCM](https://ipcm.dev), or "InterPlanetary CID Mapping." It's a simple smart contract that lives on a blockchain with the following features:
+
+- Holds a CID reference
+- Anyone can read the reference, only the owner can change it
+- Updates are recoreded onchain, creating a version history
+
+![ipcm-graph](https://cdn.orbiter.host/ipfs/bafkreihu3brxk62pvztqfpoznhxtc3puxwn3ifhbtbob6etwq54thyhs74)
+
+Thanks to this standard we're able create a website hosting system that uses IPFS and Blockchain that can be accessed outside our platform. Every website you create also created an IPCM contract on [Base](https://base.org) (An L2 blockchain by Coinbase), and every iteration is uploaded to IPFS and the contract is updated. All of this is abstracted so you don't have to worry about messing with blockchains or crypto, but it's all there behind the scenes, keeping your website open and accessible!
+
+:::tip[Want to Take Control?]
+If you're interested in more control over your website and want to sign the transactions, let us know! Based on demand we can look into implementing cyrpto controls to the Orbiter dashboard, so [send us an email](mailto:steve@orbiter.host,justin@orbiter.host) so we can prioritize!
+:::

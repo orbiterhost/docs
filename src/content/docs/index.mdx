@@ -18,3 +18,33 @@ hero:
       icon: external
       variant: minimal
 ---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+Welcome to the official Orbiter Docs! Best way to get started is clicking the button above, or taking a look at the links below.
+
+<CardGrid>
+
+<LinkCard
+  title="What is Orbiter?"
+  href="/getting-started/what-is-orbiter"
+  description="See what powers Orbiter behind the scenes"
+/>
+<LinkCard
+  title="Framework Guides"
+  href="/frameworks"
+  description="Take a look at our guides for multiple frameworks that you can host on Orbiter"
+/>
+<LinkCard
+  title="Orbiter CLI"
+  href="/cli"
+  description="Supercharge your site management speeds with our CLI"
+/>
+
+<LinkCard
+  title="Support"
+  href="https://tawk.to/chat/67741d2baf5bfec1dbe5344a/1igep3shm"
+  description="Stuck? Give us a shout!"
+/>
+
+</CardGrid>
