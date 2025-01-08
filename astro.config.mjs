@@ -8,6 +8,21 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Orbiter Docs',
+      expressiveCode: {
+        // You can set configuration options here
+        themes: ['ayu-dark', 'github-light'],
+        styleOverrides: {
+          // You can also override styles
+          borderRadius: '0.5rem',
+          frames: {
+            shadowColor: '#124',
+          },
+        },
+      },
+      logo: {
+        src: "./src/assets/white_logo.png",
+        replacesTitle: true
+      },
       social: {
         github: 'https://github.com/withastro/starlight',
       },
