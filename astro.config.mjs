@@ -27,17 +27,20 @@ export default defineConfig({
         github: 'https://github.com/withastro/starlight',
       },
       sidebar: [
+        { label: 'Quickstart', slug: 'quickstart' },
+        { label: 'What is Orbiter?', slug: 'what-is-orbiter' },
         {
-          label: 'Guides',
+          label: 'Frameworks',
           items: [
-            // Each item here is one entry in the navigation menu.
-            { label: 'Example Guide', slug: 'guides/example' },
+            { label: 'React', slug: 'frameworks/react' },
+            { label: 'Astro', slug: 'frameworks/astro' },
+            { label: 'Next', slug: 'frameworks/next' },
+            { label: 'Hugo', slug: 'frameworks/hugo' },
+            { label: 'Vite Press', slug: 'frameworks/vite-press' },
+            { label: 'Gatsby', slug: 'frameworks/gatsby' },
           ],
         },
-        {
-          label: 'Reference',
-          autogenerate: { directory: 'reference' },
-        },
+        { label: 'CLI', slug: 'cli' },
       ],
       customCss: ['./src/tailwind.css'],
     }),
