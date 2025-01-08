@@ -10,17 +10,11 @@ export default defineConfig({
       title: 'Orbiter Docs',
       expressiveCode: {
         // You can set configuration options here
-        themes: ['ayu-dark', 'github-light'],
-        styleOverrides: {
-          // You can also override styles
-          borderRadius: '0.5rem',
-          frames: {
-            shadowColor: '#124',
-          },
-        },
+        themes: ['poimandres', 'github-light'],
       },
       logo: {
-        src: "./src/assets/white_logo.png",
+        light: "./src/assets/dark_text_logo.png",
+        dark: "./src/assets/light_text_logo.png",
         replacesTitle: true
       },
       social: {
