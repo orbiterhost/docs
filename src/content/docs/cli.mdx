@@ -104,6 +104,10 @@ orbiter update --domain astro-demo ./new-dist
 
 ### `versions`
 
+:::note
+Versions are only available on paid plans
+:::
+
 List previous versions of a site for a given subdomain, ie `<subdomain>.orbiter.website`. the `cid` listed in the response can be used in `rollback` to rollback a site to a previous version.
 
 ```
@@ -131,6 +135,10 @@ This will return the following object
 ```
 
 ### `rollback`
+
+:::note
+Rollbacks are only available on paid plans
+:::
 
 Rollback a site to a previous version using the `subdomain` and the `cid` of the previous version to update it. Use `versions` to get the previous versions for a site.
 
