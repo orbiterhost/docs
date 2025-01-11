@@ -12,6 +12,102 @@ export default defineConfig({
         // You can set configuration options here
         themes: ['poimandres', 'github-light'],
       },
+      head: [
+        {
+          tag: "link",
+          attrs: {
+            rel: "icon",
+            type: "image/png",
+            href: "https://orbiter.host/orbiter.png"
+          }
+        },
+        {
+          tag: "meta",
+          attrs: {
+            name: "description"
+          },
+          content: "Official documentation for Orbiter"
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:url",
+            content: "https://docs.orbiter.host"
+          }
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:type",
+            content: "website"
+          }
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:title",
+            content: "Orbiter Docs"
+          }
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:description",
+            content: "Offician documentaiton for Orbiter"
+          }
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image",
+            content: "https://orbiter.host/og.png"
+          }
+        },
+        // Twitter Meta Tags
+        {
+          tag: "meta",
+          attrs: {
+            name: "twitter:card",
+            content: "summary_large_image"
+          }
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "twitter:domain",
+            content: "docs.orbiter.host"
+          }
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "twitter:url",
+            content: "https://docs.orbiter.host"
+          }
+        },
+        {
+          tag: "meta",
+          attrs: {
+            name: "twitter:title",
+            content: "Orbiter Docs"
+          }
+        },
+        {
+          tag: "meta",
+          attrs: {
+            name: "twitter:description",
+            content: "Official documentation for Orbiter"
+          }
+        },
+        {
+          tag: "meta",
+          attrs: {
+            name: "twitter:image",
+            content: "https://orbiter.host/og.png"
+          }
+        }
+
+      ],
       logo: {
         light: "./src/assets/dark_text_logo.png",
         dark: "./src/assets/light_text_logo.png",
