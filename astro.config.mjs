@@ -8,6 +8,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Orbiter Docs',
+      description: "Official documentation for Orbiter",
       expressiveCode: {
         // You can set configuration options here
         themes: ['poimandres', 'github-light'],
@@ -19,7 +20,8 @@ export default defineConfig({
             rel: "icon",
             type: "image/png",
             href: "https://orbiter.host/orbiter.png"
-          }
+          },
+          content: "https://orbiter.host/orbiter.png"
         },
         {
           tag: "meta",
@@ -60,7 +62,7 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://orbiter.host/og.png"
+            content: "https://cdn.orbiter.host/ipfs/bafybeiexhly25ojop6a6bwcrniasjzwsfoom6w6mjvg64b7t7jtlbomrgq"
           }
         },
         // Twitter Meta Tags
@@ -103,7 +105,7 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             name: "twitter:image",
-            content: "https://orbiter.host/og.png"
+            content: "https://cdn.orbiter.host/ipfs/bafybeiexhly25ojop6a6bwcrniasjzwsfoom6w6mjvg64b7t7jtlbomrgq"
           }
         }
 
