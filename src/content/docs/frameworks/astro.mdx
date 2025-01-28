@@ -3,4 +3,89 @@ title: Astro
 description: Host your Astro site on Orbiter
 ---
 
-Coming soon
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+In this guide we’ll show you how you can host your Astro project on Orbiter.
+
+## Setup
+
+Start up a new Astro project with the following command:
+
+```bash
+npm create astro@latest orbiter-site
+```
+
+The Houston bot will ask which template you want to use, if you want to install dependencies, and if you want to initialize the project with Git. We recommend starting with the minimal template and selecting `yes` for the latter two questions.
+
+Once complete run the following command to move into the project and spin up the dev server
+
+```bash
+cd orbiter-site
+npm run dev
+```
+
+Go ahead and run each of those one at a time, then you should have a local dev server at [`http://localhost:4321`](http://localhost:4321) which you can visit and see the starter template.
+
+## Build
+
+Once you have your site edited and ready to go, close the dev server and run the following command:
+
+```bash
+npm run build
+```
+
+This should create a `dist` folder in your project directory.
+
+## Deploy
+
+Login to app.orbiter.host, then click new site in the top right. From there you can either drag the `dist` folder into the drop zone or use the “select folder” button snd locate the `dist` folder. Choose a subdomain for your free [orbiter.website](http://orbiter.website) handle, then click submit.
+
+<video
+  autoPlay
+  muted
+  loop
+  playsinline
+  preload
+  class="not-content"
+  className="w-full aspect-video"
+  src="https://cdn.orbiter.host/ipfs/bafybeigzi6gyh6r63marefz35pkqlrvstmpu32hda6ojrhgytlz25jt24e"
+></video>
+
+In just a moment your site should be ready to visit, which you can do by clicking on the domain on the site card!
+
+If you prefer a CLI experience check out the docs [here](/cli). It's as simple as these three commands:
+
+```bash
+npm i -g orbiter-cli
+
+orbiter login -p google # or github
+
+orbiter create -d my-site ./dist
+```
+
+## Additional Resources
+
+<CardGrid>
+
+<LinkCard
+  title="More Features"
+  href="https://orbiter.host/pricing"
+  description="Check out what you can unlock with our affordable pricing plans"
+/>
+<LinkCard
+  title="What is Orbiter?"
+  href="/what-is-orbiter"
+  description="See what powers Orbiter behind the scenes"
+/>
+<LinkCard
+  title="Orbiter Blog"
+  href="https://orbiter.host/blog"
+  description="Check out some of our tutorials and musing about bringing fun back to the web"
+/>
+<LinkCard
+  title="Orbiter CLI"
+  href="/cli"
+  description="Supercharge your site management speeds with our CLI"
+/>
+
+</CardGrid>
