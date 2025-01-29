@@ -32,9 +32,12 @@ orbiter <subcommand>
 where <subcommand> can be one of:
 
 - login - Login with OAuth
+- orgs - List and select organization
 - create - Upload and create a new site on Orbiter
 - list - List existing sites for your account
 - update - Update a site with a new file or folder
+- versions - List versions of your website
+- rollback - Rollback a site to a previous version
 - delete - Delete an existing site
 
 For more help, try running `orbiter <subcommand> --help`
@@ -46,6 +49,14 @@ Start by running `login` including your `--provider` (shorthand `-p`) of choice 
 
 ```bash
 orbiter login --provider google
+```
+
+### `orgs`
+
+If you happen to be a member of multiple organizations you can list them and select them with this command. When you login the CLI will select the first in the list by default and store the data until updated with the orgs command.
+
+```bash
+orbiter orgs
 ```
 
 ### `create`
