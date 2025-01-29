@@ -3,4 +3,116 @@ title: Hugo
 description: Host your Hugo site on Orbiter
 ---
 
-Coming soon
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+In this guide we’ll show you how you can host your Hugo project on Orbiter.
+
+## Setup
+
+[Install Hugo](https://gohugo.io/installation/macos/) on your machine, then start up a new Hugo project with the following command:
+
+```bash
+hugo new site orbiter-site
+```
+
+Once complete run the following commands
+
+```bash
+cd orbiter-site
+git init
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+echo "theme = 'ananke'" >> hugo.toml
+hugo server
+```
+
+Go ahead and run each of those one at a time, then you should have a local dev server at [`http://localhost:1313`](http://localhost:1313) which you can visit and see the starter template.
+
+Let's add a new post by running the following command:
+
+```bash
+hugo new content content/posts/my-first-post.md
+```
+
+This will create a new post in the content folder. Open the file and add the following contents
+
+```markdown
++++
+date = '2025-01-20T15:32:29-06:00'
+draft = false
+title = 'My First Post'
++++
+
+## Hello, Orbiter!
+
+This is a simple example post that will be part of my Hugo site. It will be hosted on [Orbiter](<https://orbiter.host>).
+```
+
+Stop the server with `ctrl-c` then restart it with the command below
+
+```bash
+hugo server -D
+```
+
+## Build
+
+Once you have your site edited and ready to go, close the dev server and run the command below
+
+```bash
+hugo
+```
+
+This should create a `public` folder in your project directory which is where all the website files will live.
+
+## Deploy
+
+Login to app.orbiter.host, then click new site in the top right. From there you can either drag the `public` folder into the drop zone or use the “select folder” button snd locate the `public` folder. Choose a subdomain for your free [orbiter.website](http://orbiter.website) handle, then click submit.
+
+<video
+  autoPlay
+  muted
+  loop
+  playsinline
+  preload
+  class="not-content"
+  className="w-full aspect-video"
+  src="https://cdn.orbiter.host/ipfs/bafybeigzi6gyh6r63marefz35pkqlrvstmpu32hda6ojrhgytlz25jt24e"
+></video>
+
+In just a moment your site should be ready to visit, which you can do by clicking on the domain on the site card!
+
+If you prefer a CLI experience check out the docs [here](/cli). It's as simple as these three commands:
+
+```bash
+npm i -g orbiter-cli
+
+orbiter login -p google # or github
+
+orbiter create -d my-site ./public
+```
+
+## Additional Resources
+
+<CardGrid>
+
+<LinkCard
+  title="More Features"
+  href="https://orbiter.host/pricing"
+  description="Check out what you can unlock with our affordable pricing plans"
+/>
+<LinkCard
+  title="What is Orbiter?"
+  href="/what-is-orbiter"
+  description="See what powers Orbiter behind the scenes"
+/>
+<LinkCard
+  title="Orbiter Blog"
+  href="https://orbiter.host/blog"
+  description="Check out some of our tutorials and musing about bringing fun back to the web"
+/>
+<LinkCard
+  title="Orbiter CLI"
+  href="/cli"
+  description="Supercharge your site management speeds with our CLI"
+/>
+
+</CardGrid>
