@@ -12,7 +12,19 @@ paths:
       tags:
       - Sites
       summary: List Sites
-      description: List all sites on your account
+      description: |-
+        You can list sites on your account using `GET /sites` and filter them by subdomain if needed
+
+        ``` typescript
+        const sitesReq = await fetch("https://api.orbiter.host/sites?domain=my-site", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Orbiter-API-Key": "<YOUR-API-KEY>"
+          }
+        })
+        const sites = await req.json()
+        ```
       operationId: listSites
       parameters:
         - in: query
@@ -165,7 +177,43 @@ paths:
       tags:
       - Sites
       summary: Update Site
-      description: Update an existing site by site ID with a new CID
+      description: |-
+        Using a `siteId` you can update an existing site by providing a new CID for the website content. This requires uploading the new site and the making another request with the CID.
+
+        ```typescript
+        import { PinataSDK } from "pinata-web3"
+
+        const pinata = new PinataSDK({
+          pinataJwt: "",
+          pinataGateway: ""
+        })
+
+        const keyReq = await fetch("https://api.orbiter.host/keys/upload_key", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Orbiter-API-Key": "<YOUR-API-KEY>"
+          },
+          body: null
+        })
+
+        const keyRes = await keyReq.json()
+        const files: File[] = [] // Get a folder of files either locally or through a front end
+        const upload = await pinata.upload.fileArray(files).key(keyRes.data)
+
+        const siteId = "36a7cbd9-4d48-4f4c-90f2-557299bf917f" // Can be obtains with GET /sites?domain=my=site
+
+        const updateSite = await fetch(`https://api.orbiter.host/sites/${siteId}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Orbiter-API-Key": "<YOUR-API-KEY>"
+          },
+          body: JSON.stringify({
+            cid: upload.IpfsHash,
+          })
+        })
+         ```
       operationId: updateSite
       requestBody:
         content:
@@ -199,7 +247,20 @@ paths:
       tags:
       - Sites
       summary: Delete Site
-      description: Delete an existing site by site ID
+      description: |-
+        Using a `siteId` you can delete a site from your account
+
+        ```typescript
+        const siteId = "36a7cbd9-4d48-4f4c-90f2-557299bf917f" // Can be obtains with GET /sites?domain=my=site
+
+        const deleteSite = await fetch(`https://api.orbiter.host/sites/${siteId}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Orbiter-API-Key": "<YOUR-API-KEY>"
+          }
+        })
+        ```
       operationId: deleteSite
       responses:
         '200':
@@ -228,7 +289,42 @@ paths:
       tags:
       - Keys
       summary: Upload Key
-      description: Generate a one time Pinata JWT that can be used to upload a build folder
+      description: |-
+        All sites on Orbiter are hosted on IPFS through [Pinata](https://pinata.cloud), so all site deployments require a CID as a reference to the content. Orbiter has created an API route you can use to generate a temporary one-time use API key to upload a website folder.
+
+        ``` typescript
+        import { PinataSDK } from "pinata-web3"
+
+        const pinata = new PinataSDK({
+          pinataJwt: "",
+          pinataGateway: ""
+        })
+
+        const keyReq = await fetch("https://api.orbiter.host/keys/upload_key", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Orbiter-API-Key": "<YOUR-API-KEY>"
+          },
+          body: null
+        })
+
+        const keyRes = await keyReq.json()
+        const files: File[] = [] // Get a folder of files either locally or through a front end
+        const upload = await pinata.upload.fileArray(files).key(keyRes.data)
+
+        const deploySite = await fetch("https://api.orbiter.host/sites", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Orbiter-API-Key": "<YOUR-API-KEY>"
+          },
+          body: JSON.stringify({
+            cid: upload.IpfsHash,
+            subdomain: "my-site"
+          })
+        })
+        ```
       operationId: uploadKey
       requestBody:
         content:
