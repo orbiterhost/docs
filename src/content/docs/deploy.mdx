@@ -2,3 +2,116 @@
 title: Deploy
 description: Learn the fundementals of how to deploy your site on Orbiter
 ---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+Orbiter makes it easy to deploy a static site, no matter what your preference is! In this doc we'll go over multiple ways you can deploy with Orbiter.
+
+:::tip
+If you're looking for a specific guide for your framework, check out our [framework guides](/frameworks)!
+:::
+
+## Web App
+
+The Orbiter App makes it simple to deploy your site. Simply login, click on "Create Site", then select your File or Folder, give it a domain, and deploy!
+
+<video
+  autoPlay
+  muted
+  loop
+  playsinline
+  preload
+  class="not-content"
+  className="w-full aspect-video"
+  src="https://cdn.orbiter.host/ipfs/bafybeigzi6gyh6r63marefz35pkqlrvstmpu32hda6ojrhgytlz25jt24e"
+></video>
+
+Told you it was easy
+
+## CLI
+
+If you're like me (Steve 👋) you probably prefer a CLI flow, and Orbiter has you covered!
+
+First you'll want to install the CLI by running the following command:
+
+```bash
+npm i -g orbiter-cli
+```
+
+Once installed you can either authenticate using an API Key (created on the [API Keys Page](https://app.orbiter.host/api-keys))
+
+```bash
+orbiter auth
+```
+
+Or by using an OAuth login
+
+```bash
+orbiter login -p google # or github
+```
+
+If you're using a framework like Astro or React, go ahead and build it to create the folder that will be uploaded
+
+```bash
+npm run build
+```
+
+This will create a folder like `dist` or `out`.
+
+Now you can simply run the `deploy` command
+
+```bash
+orbiter deploy
+```
+
+This will setup your project with an `orbiter.json` configuration file that will be referenced for future deployments or updates where you can just run `deploy` again!
+
+## Automated GitHub Deployments
+
+For those who like to just `git push` and forget about it, the [Orbiter GitHub Actions](/github-actions-and-hooks) are the perfect solution. Check out our guide on how to use them!
+
+<LinkCard title="GitHub Actions & Hooks" description="Learn how to automatically deploy and update your site using GitHub Actions and Hooks" href="/github-actions-and-hooks" />
+
+## API
+
+If you want to build Orbiter deployments elsewhere you can use our API!
+
+First you will want to make an API Key from our [API Keys Page](https://app.orbiter.host/api-keys) from within the Orbiter app.
+
+Orbiter used [Pinata](https://pinata.cloud) to deploy sites to IPFS, so in order to deploy a site through the API you will need to upload it first. Orbiter provides an `upload_key` endpoint that will give you a temproary Pinata API key to upload with. Once you upload the file or folder and get the CID back, you can use this CID in the Orbiter API call to create a site.
+
+```typescript
+import { PinataSDK } from "pinata-web3"
+
+const pinata = new PinataSDK({
+  pinataJwt: "",
+  pinataGateway: ""
+})
+
+const keyReq = await fetch("https://api.orbiter.host/keys/upload_key", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "X-Orbiter-API-Key": "<YOUR-API-KEY>"
+  },
+  body: null
+})
+
+const keyRes = await keyReq.json()
+const files: File[] = [] // Get a folder of files either locally or through a front end
+const upload = await pinata.upload.fileArray(files).key(keyRes.data)
+
+const deploySite = await fetch("https://api.orbiter.host/sites", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "X-Orbiter-API-Key": "<YOUR-API-KEY>"
+  },
+  body: JSON.stringify({
+    cid: upload.IpfsHash,
+    subdomain: "my-site"
+  })
+})
+```
+
+To learn what else you can do with our API check out the [API Reference](/api-reference)!

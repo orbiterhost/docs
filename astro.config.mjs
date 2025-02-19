@@ -34,8 +34,12 @@ export default defineConfig({
         ]),
       ],
       sidebar: [
-        { label: 'Quickstart', slug: 'quickstart' },
-        { label: 'What is Orbiter?', slug: 'what-is-orbiter' },
+        {
+          label: "Getting Started", items: [
+            { label: 'Quickstart', slug: 'quickstart' },
+            { label: 'What is Orbiter?', slug: 'what-is-orbiter' }
+          ]
+        },
         {
           label: 'Frameworks',
           items: [
@@ -47,8 +51,15 @@ export default defineConfig({
             { label: 'Gatsby', slug: 'frameworks/gatsby' },
           ],
         },
+        {
+          label: "Sites", items: [
+            { label: 'Deploy', slug: 'deploy' },
+            { label: 'Custom Domains', slug: 'custom-domains' },
+            { label: 'CLI', slug: 'cli' },
+            { label: "GitHub Actions & Hooks", slug: 'github-actions-and-hooks' },
+          ]
+        },
         ...openAPISidebarGroups,
-        { label: 'CLI', slug: 'cli' },
       ],
       customCss: ['./src/tailwind.css'],
       head: [

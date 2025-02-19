@@ -2,3 +2,56 @@
 title: Custom Domains
 description: Learn how to use your custom domains on Orbiter
 ---
+
+We know you probably love your free `.orbiter.website` domain, but the world wants to see your brand! Orbiter's Custom Domain features allows you to do that, and it's really simple to use.
+
+:::note
+Custom Domains are currently only available on the Launch or Orbit plans
+:::
+
+### Setup
+
+To start using Custom Domains make sure you are on a paid plan and you already have a custom domain ready to use. (We will likely add support to buy domains through Orbiter) You will also want to go ahead and deploy your first site by following the [Quickstart Guide](/quickstart)!
+
+### Adding the Domain
+
+To add your custom domain click on the Setting cog for the site you want to use, then type in the domain. This could either be a naked subdomain like `stevedylan.dev` or a subdomain like `demo.stevedylan.dev`. Once you haved typed it in you will see some DNS records we need to set.
+
+<video
+  autoPlay
+  muted
+  loop
+  playsinline
+  preload
+  class="not-content"
+  className="w-full aspect-video"
+  src="https://cdn.orbiter.host/ipfs/bafybeieu7ovzj2w2avkzmhpy2cvs7f2mxmhcdj3wknuecihxjtw5eoim4u"
+></video>
+
+### Setting the DNS
+
+This step might very depending who your domain provider is. You will want to go to the DNS settings there and set the record you got from Orbiter. It will like be one of the following:
+
+| Record Type | Host | Value |
+| ------------|------|-------|
+| A      |  subdomain   | 165.22.46.134 |
+
+| Record Type | Host | Value |
+| ------------|------|-------|
+| A      |  @   | 165.22.46.134 |
+
+Go into your DNS provider settings to add the record, it might look something like the following
+
+![dnsrecords](https://cdn.orbiter.host/ipfs/bafkreif74tgdd4pzejui5j3wn3apmz5litnksj4ler63bqf7mdebx67o6a)
+
+Once you have set the records you can go back to the Orbiter app, click on the settings cog, and the custom domain once again. After the records have been set you should get green lights on both the DNS and the SSL!
+
+![domain set](https://cdn.orbiter.host/ipfs/bafkreif27h4rco5acskpjoimc6iyajd3ssqezrikdjhpgf5hreyhtuejli)
+
+:::tip
+Seeing a lot of spinning yellow? This is normal! DNS can take a while to propagate so be patient!
+:::
+
+### You're Done! 🚀
+
+Look at that snazzy new site, really nice! Setting up custom domains is a breeze and will likely put you in a tough spot where you can't stop buying them :)
