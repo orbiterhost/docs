@@ -12,7 +12,7 @@ export default defineConfig({
       description: "Official documentation for Orbiter",
       expressiveCode: {
         // You can set configuration options here
-        themes: ['poimandres', 'github-light'],
+        themes: ['min-dark'],
       },
       logo: {
         light: "./src/assets/dark_text_logo.png",
