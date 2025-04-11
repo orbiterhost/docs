@@ -112,7 +112,7 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://cdn.orbiter.host/ipfs/bafybeiexhly25ojop6a6bwcrniasjzwsfoom6w6mjvg64b7t7jtlbomrgq"
+            content: "https://cdn.orbiter.host/ipfs/bafkreigqlvbltjymoyzij5o7iotbsmcjizeglutbzlnop6tyyp4p6ik3hq"
           }
         },
         // Twitter Meta Tags
@@ -155,7 +155,7 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             name: "twitter:image",
-            content: "https://cdn.orbiter.host/ipfs/bafybeiexhly25ojop6a6bwcrniasjzwsfoom6w6mjvg64b7t7jtlbomrgq"
+            content: "https://cdn.orbiter.host/ipfs/bafkreigqlvbltjymoyzij5o7iotbsmcjizeglutbzlnop6tyyp4p6ik3hq"
           }
         }
 
