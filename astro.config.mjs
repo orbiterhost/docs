@@ -37,6 +37,7 @@ export default defineConfig({
         {
           label: "Getting Started", items: [
             { label: 'Quickstart', slug: 'quickstart' },
+            { label: 'Mini Apps', slug: 'miniapps' },
             { label: 'What is Orbiter?', slug: 'what-is-orbiter' }
           ]
         },
