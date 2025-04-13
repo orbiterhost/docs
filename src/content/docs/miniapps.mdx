@@ -5,6 +5,7 @@ description: Learn how to effortless host Farcaster Mini Apps on Orbiter
 
 import { Steps } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
 
 Farcaster Mini Apps (previous Frames) provide an easy way for developers to build rich in-app experiences, and Orbiter makes it simple to host one! Follow our quickstart below or read more in depth the pieces that go into Mini Apps.
 
@@ -24,86 +25,270 @@ Farcaster Mini Apps (previous Frames) provide an easy way for developers to buil
    ```bash
    orbiter miniapp
    ```
+
+4. Update the Mini App with `deploy`
+   ```bash
+   orbiter deploy
+   ```
+
 </Steps>
 
-## How Mini Apps Work
+## Manual Setup
 
-Mini Apps have three primary components that let them run inside Farcaster
+If you prefer to manually setup your Mini App we'll walk you through the necessary components to make it work with Farcaster.
 
-### SDK
+### Project Setup
 
-The [Mini App SDK](https://miniapps.farcaster.xyz/docs/sdk/context) is used to send messages to a Farcaster client and receive things like context (user who is interacting, their FID, PFP, etc). Initialization is done through importing the SDK and using `sdk.actions.ready()`.
+To be beging let's start up a fresh project. We would reccomend using Vite with a framework like React.
 
-<Tabs>
-  <TabItem label="React">
-
-    ```typescript {14}
-    import { useState, useEffect, useCallback } from 'react'
-    import './App.css'
-    import sdk from '@farcaster/frame-sdk';
-    import { Context } from '@farcaster/frame-sdk';
-
-    function App() {
-      const [isSDKLoaded, setIsSDKLoaded] = useState(false);
-      const [context, setContext] = useState<Context.FrameContext>();
-      const [isContextOpen, setIsContextOpen] = useState(false);
-
-      useEffect(() => {
-        const load = async () => {
-          setContext(await sdk.context);
-          sdk.actions.ready();
-        };
-        if (sdk && !isSDKLoaded) {
-          setIsSDKLoaded(true);
-          load();
-        }
-      }, [isSDKLoaded]);
-    ```
-
-  </TabItem>
-  <TabItem label="HTML">
-  ```html {3}
-  <script src="https://cdn.jsdelivr.net/npm/@farcaster/frame-sdk/dist/index.min.js"></script>
-  <script>
-      frame.sdk.actions.ready();
-  </script>
-  ```
-
-  </TabItem>
-</Tabs>
-
-As long as you are using the SDK in a client enviornment it should be able to communicate with Farcaster.
-
-### Embed
-
-Similar to how you might use `<meta>` tags to provide opengraph data, Farcaster will look for a special meta tag that it will use to load the app launcher in a feed.
-
-```html
-<meta name="fc:frame" content="<stringified Embed JSON>" />
+```bash
+npm create vite@latest mini-app
 ```
 
-```typescript
-{
-  "version": "next",
-  "imageUrl": "https://yoink.party/framesV2/opengraph-image",
-  "button": {
-    "title": "🚩 Start",
-    "action": {
-      "type": "launch_frame",
-      "name": "Yoink!",
-      "url": "https://yoink.party/framesV2",
-      "splashImageUrl": "https://yoink.party/logo.png",
-      "splashBackgroundColor": "#f5f0ec"
+It will give you some choices, and for this tutorial we'll choose React with Typescript. Once it's finished setting up the project let's move into it and install dependencies.
+
+```bash
+cd mini-app
+npm install @farcaster/frame-sdk
+```
+
+### Mini App SDK
+
+Then with your text editor of choice open the `src/App.tsx` and let's paste in the following contents.
+
+```typescript {14}
+import { useState, useEffect, useCallback } from 'react'
+import './App.css'
+import sdk from '@farcaster/frame-sdk';
+import { Context } from '@farcaster/frame-sdk';
+
+function App() {
+  const [isSDKLoaded, setIsSDKLoaded] = useState(false);
+  const [context, setContext] = useState<Context.FrameContext>();
+  const [isContextOpen, setIsContextOpen] = useState(false);
+
+  useEffect(() => {
+    const load = async () => {
+      setContext(await sdk.context);
+      sdk.actions.ready();
+    };
+    if (sdk && !isSDKLoaded) {
+      setIsSDKLoaded(true);
+      load();
     }
+  }, [isSDKLoaded]);
+
+  const toggleContext = useCallback(() => {
+    setIsContextOpen((prev) => !prev);
+  }, []);
+
+  if (!isSDKLoaded) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div style={{
+      maxWidth: "400px",
+      margin: "0 auto",
+      padding: "0 16px"
+    }}>
+      <h1>Frames v2 Demo</h1>
+
+      <div>
+        <h2>Context</h2>
+        <button
+          onClick={toggleContext}
+        >
+          <span>
+            ➤
+          </span>
+          Tap to expand
+        </button>
+
+        {isContextOpen && (
+          <div style={{
+            overflow: 'auto',
+            maxWidth: '100%'
+          }}>
+            <pre style={{
+              whiteSpace: 'pre-wrap',
+              wordWrap: 'break-word',
+              wordBreak: 'break-word',
+              overflowWrap: 'break-word',
+              maxWidth: '100%',
+              fontSize: '14px'
+            }}>
+              {JSON.stringify(context, null, 2)}
+            </pre>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+export default App
+```
+
+The most important part of this setup is the highlighted line:
+
+```typescript
+sdk.actions.ready();
+```
+
+This sends a message to the Farcaster client that your Mini App is ready to communicate and help it load inside Farcaster. Of course there's a whole lot more the SDK is capable of so we would highly recommend reading [the documentation](https://miniapps.farcaster.xyz).
+
+### Embed Meta Tag
+
+Next we'll setup the embed meta tag. This provides Farcaster information similar to Opengraph data with images, description, etc. Inside the `index.html` paste in the code below.
+
+```html {8}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+    <meta name="fc:frame" content='{"version":"next","imageUrl":"https://v2demo.orbiter.website/image.png","button":{"title":"Launch","action":{"type":"launch_frame","name":"Launch","url":"https://v2demo.orbiter.website","splashImageUrl":"https://v2demo.orbiter.website/splash.png","splashBackgroundColor":"#ffffff"}}}' />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+```
+
+Here's the same information but a bit easier to read.
+
+```html
+<meta name="fc:frame" content='
+  {
+    "version":"next",
+    "imageUrl":"https://miniapp.orbiter.website/image.png",
+    "button":{
+      "title":"Launch",
+      "action":
+        {
+          "type":"launch_frame",
+          "name":"Launch",
+          "url":"https://miniapp.orbiter.website",
+          "splashImageUrl":"https://miniapp.orbiter.website/splash.png",
+          "splashBackgroundColor":"#ffffff"
+        }
+      }
+    }
+  ' />
+```
+
+The key is to update the domain from `miniapp.orbiter.website` to whatever your Orbiter domain or custom domain is going to be. If you don't have that yet that's ok, just don't forget to update it later!
+
+### Manifest
+
+Once you save the `index.html` file the last thing we need to add is the Manifest. This is a JSON file that lives inside `public/.well-known/farcaster.json`. To make this run the following commands one at a time.
+
+```bash
+mkdir public/.well-known
+touch public/.well-known/farcaster.json
+```
+
+Inside `farcaster.json` paste in the following JSON:
+
+```json
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "Mini App",
+    "iconUrl": "https://miniapp.orbiter.website/icon.png",
+    "homeUrl": "https://miniapp.orbiter.website",
+    "imageUrl": "https://miniapp.orbiter.website/image.png",
+    "buttonTitle": "Launch",
+    "splashImageUrl": "https://miniapp.orbiter.website/splash.png",
+    "splashBackgroundColor": "#ffffff"
   }
 }
 ```
 
-A full schema can be found [here](https://miniapps.farcaster.xyz/docs/specification#schema).
+The Manifest is info used by Farcaster for when a user wants to "add" your mini app, similar to installing an app from the app store. It includes basic information like images, name of the app, button title, etc. It also can include the `accountAssociation` which is used to verify that the app is owned by your Farcaster account. More information on that [here](https://miniapps.farcaster.xyz/docs/guides/publishing).
 
-### Manifest
+You'll notice that you might be missing some of the images listed here, so if you want install those run the following command:
 
-In order for Farcaster to store data about an app and allow users to add it or for it to be featured in the store, it must have a `farcaster.json` file located in `/.well-known`. We would recommend checking out the [full spec](https://miniapps.farcaster.xyz/docs/specification#manifest), but here is an example of what it might look like:
+```bash
+curl https://docs.orbiter.host/mini-app-images.zip -o images.zip && unzip images.zip -d public
+```
+
+### Deployment
+
+With all of our pieces in place we can now deploy our Mini App! There are a few ways you can deploy to Orbiter.
+
+#### CLI
+
+Perhaps the easiest route is to use the [Orbiter CLI](/cli), which has a handy command to create a new deployment or update a previous one called `deploy`.
+
+```bash
+orbiter deploy
+```
+
+This will save an `orbiter.json` configuration that will be used for future updates and deployments.
+
+#### GitHub Action
+
+Depending on the app you can create an automatic deployment using Orbiter's GitHub action. More infor can be found below.
+
+<LinkCard
+  title="Orbiter GitHub Action"
+  href="/github-actions-and-hooks"
+/>
+
+#### Orbiter App
+
+If you prefer to use a GUI, the first thing you need to do is build your project.
+
+```bash
+npm run build
+```
+
+For more frameworks this will create a static build folder like `dist`. Once you have this visit [app.orbiter.host](https://app.orbiter.host) and click `Upload Site` in the top right, select your folder, then choose a subdomain.
+
+<video
+  autoPlay
+  muted
+  loop
+  playsinline
+  preload
+  class="not-content"
+  className="w-full aspect-video"
+  src="https://cdn.orbiter.host/ipfs/bafybeigzi6gyh6r63marefz35pkqlrvstmpu32hda6ojrhgytlz25jt24e"
+></video>
+
+## Developing and Testing
+
+At the time of writing the best way to test and debug Mini Apps is inside the [Warpcast Dev Portal](https://warpcast.com/~/developers) using either the Embed or Manifest tool. With either of these you can pull up your app by URL / domain and verify the information and test the functionality.
+
+If you want to test locally you will need a tunnel with a service like [Ngrok](https://ngrok.com/) or [Tailscale](https://tailscale.com/). Both Justin and I (Steve) are pretty big fans of Tailscale for this application because it's free and super easy to use. All you need to do in order to get started is:
+
+- [Create a free account](https://login.tailscale.com)
+- [Install Tailscale](https://tailscale.com/download)
+- Run `tailscale up`
+- Then run `tailcale funnel <PORT_NUMBER>`
+
+For example, if you were using our Vite templates that by default run on `http://localhost:5173` then you would run `tailscale funnel 5173` and you should get a URL you can paste into the Mini app Embed or Manifest tool to open the app. The Farcaster team is working on better ways to test Mini Apps without the need of a tunnel so we will do our best to keep this section up to date!
+
+## Publishing
+
+When your app is ready to publish there are a few things you will want to make sure you have completed first.
+
+- Updated the images in your `public` folder
+- Update the [Embed Meta Tag](#embed-meta-tag) with your info
+- Update the [Manifest](#manifest) with your info
+- Update the [Account Association](https://miniapps.farcaster.xyz/docs/guides/publishing#verifying-ownership)
+
+The last step is truly the last one you will likely want to do, as it requires all of the domain info to be up to date. Generating the `accountAssociation` signatures can only be done through the Warpcast mobile app or through the Warpcast Developer Portal which will prompt you to sign it in your mobile app as well. Once you have the signature you will want to copy and past that object into the manifest.
 
 ```json
 {
@@ -126,9 +311,6 @@ In order for Farcaster to store data about an app and allow users to add it or f
 }
 ```
 
-The best way to generate this is to visit the [Farcaster Developer Portal](https://warpcast.com/~/developers) and use the "Create Mini App" in the top right. The `frame` information is pretty standard info, and the `webhookUrl` is optional. What might trip most up is the `accountAssociation`. This is a special object of signatures to verify that a mini app belongs to it's creator so users can trust or question it's safety and security. In order to generate the signature visit the [Mini App Builder](https://warpcast.com/~/developers/new) and click the "Register with Warpcast" button at the bottom right.
-
-
 ## Client vs Backend
 
 Orbiter currently only supports static apps, which means they must be rendered client side. If you need a backend for your Mini App on Orbiter we would highly recommend using [Hono](https://hono.dev) on a Cloudflare Worker. It's can be initialized and deployed in just a few commands!
@@ -144,3 +326,7 @@ npx wrangler login
 
 npm run deploy
 ```
+
+## Questions
+
+Stuck and need some help? Post your question in the [Orbiter Channel](https://warpcast.com/~/channel/orbiter)!
