@@ -1,0 +1,55 @@
+---
+title: Quickstart
+description: Get your static site hosted in no time
+---
+
+# Quickstart
+
+Welcome to Orbiter, the easiest way to host static websites! In this brief walkthrough we’ll show you how to launch a site in no time.
+
+::::steps
+
+### Sign Up
+
+Create a [free account](https://app.orbiter.host) and get an [API key](https://app.orbiter.host/api-keys)
+
+### Install the `orbiter-cli`
+
+Install the [orbiter-cli](/cli) and authorize it
+   ```bash [terminal]
+   npm i -g orbiter-cli
+
+   orbiter auth
+   ```
+
+### Launch your app in one command
+
+  Create a new site from a template
+
+  ```bash [terminal]
+  orbiter new
+  ```
+
+  Deploy an existing project
+
+   ```bash [terminal]
+   orbiter deploy
+   ```
+
+   ```bash [terminal]
+   ℹ No configuration found or options provided. Starting setup...
+   ✔ Would you like to: Create new site
+   ✔ Enter a subdomain for your new site: launch-my-site
+   ✔ Enter build command: npm run build
+   ✔ Enter build directory: dist
+   ✔ Configuration created
+   ✔ Build completed
+   ✔ Site deployed: https://launch-my-site.orbiter.website
+   ```
+
+### Update your changes to your app with `deploy`
+   ```bash [terminal]
+   orbiter deploy
+   ```
+
+::::

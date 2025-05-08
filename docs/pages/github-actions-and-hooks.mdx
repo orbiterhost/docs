@@ -3,7 +3,7 @@ title: GitHub Actions & Hooks
 description: Automate your deployments using GitHub actions and hooks
 ---
 
-import { FileTree } from '@astrojs/starlight/components';
+# GitHub Actions & Hooks
 
 With Orbiter's API and CLI you can easily add GitHub integrations to enable automated deployments. Both GitHub Actions and Commit Hook flows do require to have a site already deployed and an API key ready to use.
 
@@ -15,12 +15,13 @@ Before following these guides be sure to grab an [api key](https://app.orbiter.h
 
 Orbiter's GitHub Actions allow you to automatically deploy your site after each commit based on rules and other integrations you might be using
 
+::::steps
 
-### 1. Deploy Your Site
+### Deploy Your Site
 
 Before you can use the Orbiter GitHub action you will need to deploy your site to Orbiter first! Follow the [quickstart](/quickstart) guide to get started!
 
-### 2. Create and Store an API Key
+### Create and Store an API Key
 
 Visit the [API Keys](https://app.orbiter.host/api-keys) page inside the Orbiter App and create a new key with Admin permissions.
 
@@ -28,21 +29,19 @@ Once you have a key, navigate to your GitHub project, then go to `Settings > Sec
 
 ![github secrets](https://cdn.orbiter.host/ipfs/bafybeidf2hixnpueelza2wfbchglap6m6ndrqh2ybthbwclhvjoandbdli)
 
-### 3. Create the Workflow
+### Create the Workflow
 
 In the root of your project make a new directory called `.github` in the root of your folder, then add a directory called `worflows` to it. Finally make a new file called `deploy.yaml`. Alternatively you can run this in the terminal:
 
-```bash
+```bash [terminal]
 mkdir -p .github/workflows && touch .github/workflows/deploy.yaml
 ```
 
-<FileTree>
-
+```
 - .github
   - workflows
     - deploy.yaml
-
-</FileTree>
+```
 
 Inside the `deploy.yaml` file paste in the following configuration:
 
@@ -80,11 +79,13 @@ Near the bottom you will see several fields that you will need to fill out for y
 
 Once all of that information is set go ahead and save the file.
 
-### 4. Git Push!
+### Git Push!
 
 On your next commit to your main branch you should see under the actions tab that your site is building!
 
 ![demo of action](https://cdn.orbiter.host/ipfs/bafybeib7nqeuttuwiqjp7omsmj6cimodte2yk5iiqhyatmmpbb7brndvde)
+
+::::
 
 ## Git Commit Hooks
 
@@ -106,13 +107,13 @@ ORBITER_API_KEY=<YOUR KEY>
 
 If your project has already been initialized by Git you might see a `.git` folder in the root of the project. In there is a folder called `hooks` where we'll make a new file called `post-commit`
 
-```bash
+```bash [terminal]
 touch .git/hooks/post-commit
 ```
 
 Open that file and paste in the following contents
 
-```bash {8}
+```bash
 #!/bin/bash
 
 # Path: .git/hooks/post-commit
@@ -120,7 +121,7 @@ Open that file and paste in the following contents
 
 echo "Running Orbiter deployment..."
 # Run the CLI command here
-npm run build && npx orbiter-cli update -d <your domain> <your build directory>
+npm run build && npx orbiter-cli update -d <your domain> <your build directory> #[!code hl]
 
 # Alternatively you can use the --siteId instead
 # orbiter update -s <site-id> dist
@@ -139,7 +140,7 @@ In the highlighed line above you'll see some of the details you need to fill in 
 
 Once you have customized that file and saved it you will need to make the file an executable by running this command:
 
-```bash
+```bash [terminal]
 sudo chmod +x .git/hooks/post-commit
 ```
 
@@ -147,7 +148,7 @@ sudo chmod +x .git/hooks/post-commit
 
 Now if you make a commit it should automatically build and deploy your site!
 
-```bash
+```bash [terminal]
 git add .
 
 git commit -m "Testing Git hooks!"

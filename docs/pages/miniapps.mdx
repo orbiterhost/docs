@@ -3,35 +3,41 @@ title: Mini Apps
 description: Learn how to effortless host Farcaster Mini Apps on Orbiter
 ---
 
-import { Steps } from '@astrojs/starlight/components';
-import { Tabs, TabItem } from '@astrojs/starlight/components';
-import { LinkCard } from '@astrojs/starlight/components';
+import { Button } from 'vocs/components'
+
+# Mini Apps
 
 Farcaster Mini Apps (previous Frames) provide an easy way for developers to build rich in-app experiences, and Orbiter makes it simple to host one! Follow our quickstart below or read more in depth the pieces that go into Mini Apps.
 
 ## Quickstart
 
-<Steps>
-1. Create a [free account](https://app.orbiter.host) and get an [API key](https://app.orbiter.host/api-keys)
+::::steps
 
-2. Install the [orbiter-cli](/cli) and authorize it
-   ```bash
+### Create an Account
+
+Create a [free account](https://app.orbiter.host) and get an [API key](https://app.orbiter.host/api-keys)
+
+### Install the `orbiter-cli`
+
+Install the [orbiter-cli](/cli) and authorize it
+   ```bash [terminal]
    npm i -g orbiter-cli
 
    orbiter auth
    ```
 
-3. Launch a Mini App in one command
-   ```bash
+### Deploy
+
+Launch a Mini App in one command
+   ```bash [terminal]
    orbiter miniapp
    ```
 
-4. Update the Mini App with `deploy`
-   ```bash
+Update the Mini App with `deploy`
+   ```bash [terminal]
    orbiter deploy
    ```
 
-</Steps>
 
 ## Manual Setup
 
@@ -41,13 +47,13 @@ If you prefer to manually setup your Mini App we'll walk you through the necessa
 
 To be beging let's start up a fresh project. We would reccomend using Vite with a framework like React.
 
-```bash
+```bash [terminal]
 npm create vite@latest mini-app
 ```
 
 It will give you some choices, and for this tutorial we'll choose React with Typescript. Once it's finished setting up the project let's move into it and install dependencies.
 
-```bash
+```bash [terminal]
 cd mini-app
 npm install @farcaster/frame-sdk
 ```
@@ -56,7 +62,7 @@ npm install @farcaster/frame-sdk
 
 Then with your text editor of choice open the `src/App.tsx` and let's paste in the following contents.
 
-```typescript {14}
+```tsx src/App.tsx
 import { useState, useEffect, useCallback } from 'react'
 import './App.css'
 import sdk from '@farcaster/frame-sdk';
@@ -70,7 +76,7 @@ function App() {
   useEffect(() => {
     const load = async () => {
       setContext(await sdk.context);
-      sdk.actions.ready();
+      sdk.actions.ready(); // [!code hl]
     };
     if (sdk && !isSDKLoaded) {
       setIsSDKLoaded(true);
@@ -187,7 +193,7 @@ The key is to update the domain from `miniapp.orbiter.website` to whatever your 
 
 Once you save the `index.html` file the last thing we need to add is the Manifest. This is a JSON file that lives inside `public/.well-known/farcaster.json`. To make this run the following commands one at a time.
 
-```bash
+```bash [terminal]
 mkdir public/.well-known
 touch public/.well-known/farcaster.json
 ```
@@ -218,7 +224,7 @@ The Manifest is info used by Farcaster for when a user wants to "add" your mini 
 
 You'll notice that you might be missing some of the images listed here, so if you want install those run the following command:
 
-```bash
+```bash [terminal]
 curl https://docs.orbiter.host/mini-app-images.zip -o images.zip && unzip images.zip -d public
 ```
 
@@ -230,7 +236,7 @@ With all of our pieces in place we can now deploy our Mini App! There are a few 
 
 Perhaps the easiest route is to use the [Orbiter CLI](/cli), which has a handy command to create a new deployment or update a previous one called `deploy`.
 
-```bash
+```bash [terminal]
 orbiter deploy
 ```
 
@@ -238,18 +244,15 @@ This will save an `orbiter.json` configuration that will be used for future upda
 
 #### GitHub Action
 
-Depending on the app you can create an automatic deployment using Orbiter's GitHub action. More infor can be found below.
+Depending on the app you can create an automatic deployment using Orbiter's GitHub action. More information can be found below.
 
-<LinkCard
-  title="Orbiter GitHub Action"
-  href="/github-actions-and-hooks"
-/>
+<Button href="/github-actions-and-hooks">Orbiter GitHub Action</Button>
 
 #### Orbiter App
 
 If you prefer to use a GUI, the first thing you need to do is build your project.
 
-```bash
+```bash [terminal]
 npm run build
 ```
 
@@ -315,7 +318,7 @@ The last step is truly the last one you will likely want to do, as it requires a
 
 Orbiter currently only supports static apps, which means they must be rendered client side. If you need a backend for your Mini App on Orbiter we would highly recommend using [Hono](https://hono.dev) on a Cloudflare Worker. It's can be initialized and deployed in just a few commands!
 
-```bash
+```bash [terminal]
 npm create hono@latest my-app # Select Cloudflare Workers
 
 cd my-app

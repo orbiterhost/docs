@@ -1,0 +1,71 @@
+---
+title: React
+description: Host your React site on Orbiter
+---
+
+# React
+
+In this guide we’ll show you how you can host your React project on Orbiter.
+
+## Quickstart
+
+Install and authorize the `orbiter-cli` with your [API Key](https//app.orbiter.host/api-keys)
+
+```bash [terminal]
+npm i -g orbiter-cli
+
+orbiter auth
+```
+
+Start up and deploy a React app in one command
+
+```bash [terminal]
+orbiter new
+```
+
+## Manual Setup
+
+Start up a new React project with the following command:
+
+```bash [terminal]
+npm create vite@latest orbiter-site
+```
+
+Give you project Select the React option and then choose your flavor. Then it should give you the following commands:
+
+```bash [terminal]
+cd orbiter-site
+npm install
+npm run dev
+```
+
+Go ahead and run each of those one at a time, then you should have a local dev server at [`http://localhost:5173`](http://localhost:5173) which you can visit and see the starter template.
+
+## Deploy
+
+Using the `orbiter-cli` you can run the following command to deploy and update your site
+
+```bash [terminal]
+orbiter deploy
+```
+
+Alternatively you can build the site first to upload through the web app
+
+```bash [terminal]
+npm run build
+```
+
+Login to [app.orbiter.host](https://app.orbiter.host), then click new site in the top right. From there you can either drag the `dist` folder into the drop zone or use the “select folder” button snd locate the `dist` folder. Choose a subdomain for your free [orbiter.website](http://orbiter.website) handle, then click submit.
+
+<video
+  autoPlay
+  muted
+  loop
+  playsinline
+  preload
+  class="not-content"
+  className="w-full aspect-video"
+  src="https://cdn.orbiter.host/ipfs/bafybeigzi6gyh6r63marefz35pkqlrvstmpu32hda6ojrhgytlz25jt24e"
+></video>
+
+In just a moment your site should be ready to visit, which you can do by clicking on the domain on the site card!

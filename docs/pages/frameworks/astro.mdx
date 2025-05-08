@@ -1,0 +1,79 @@
+---
+title: Astro
+description: Host your Astro site on Orbiter
+---
+
+# Astro
+
+In this guide we’ll show you how you can host your Astro project on Orbiter.
+
+## Quickstart
+
+Install and authorize the `orbiter-cli` with your [API Key](https//app.orbiter.host/api-keys)
+
+```bash [terminal]
+npm i -g orbiter-cli
+
+orbiter auth
+```
+
+Start up and deploy a React app in one command
+
+```bash [terminal]
+orbiter new
+```
+
+## Manual Setup
+
+Start up a new Astro project with the following command:
+
+```bash [terminal]
+npm create astro@latest orbiter-site
+```
+
+The Houston bot will ask which template you want to use, if you want to install dependencies, and if you want to initialize the project with Git. We recommend starting with the minimal template and selecting `yes` for the latter two questions.
+
+Once complete run the following command to move into the project and spin up the dev server
+
+```bash [terminal]
+cd orbiter-site
+npm run dev
+```
+
+Go ahead and run each of those one at a time, then you should have a local dev server at [`http://localhost:4321`](http://localhost:4321) which you can visit and see the starter template.
+
+
+## Deploy
+
+You can use the CLI To deploy the site
+
+```bash [terminal]
+npm i -g orbiter-cli
+
+orbiter auth
+
+orbiter deploy
+```
+
+Alternatively you can deploy through the web app. Start by running the build command
+
+```bash [terminal]
+npm run build
+```
+
+This should create a `dist` folder in your project directory.
+
+Login to [app.orbiter.host](https://app.orbiter.host), then click new site in the top right. From there you can either drag the `dist` folder into the drop zone or use the “select folder” button snd locate the `dist` folder. Choose a subdomain for your free [orbiter.website](http://orbiter.website) handle, then click submit.
+
+<video
+  autoPlay
+  muted
+  loop
+  playsinline
+  preload
+  class="not-content"
+  className="w-full aspect-video"
+  src="https://cdn.orbiter.host/ipfs/bafybeigzi6gyh6r63marefz35pkqlrvstmpu32hda6ojrhgytlz25jt24e"
+></video>
+
+In just a moment your site should be ready to visit, which you can do by clicking on the domain on the site card!

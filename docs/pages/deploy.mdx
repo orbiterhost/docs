@@ -3,13 +3,40 @@ title: Deploy
 description: Learn the fundementals of how to deploy your site on Orbiter
 ---
 
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import { Button } from 'vocs/components'
+
+# Deploy
 
 Orbiter makes it easy to deploy a static site, no matter what your preference is! In this doc we'll go over multiple ways you can deploy with Orbiter.
 
 :::tip
 If you're looking for a specific guide for your framework, check out our [framework guides](/frameworks)!
 :::
+
+
+## CLI
+
+Install and authorize the `orbiter-cli` with your [API Key](https//app.orbiter.host/api-keys)
+
+```bash [terminal]
+npm i -g orbiter-cli
+
+orbiter auth
+```
+
+Create a new site from a template
+
+```bash [terminal]
+orbiter new
+```
+
+Deploy an existing project
+
+```bash [terminal]
+orbiter deploy
+```
+
+This will setup your project with an `orbiter.json` configuration file that will be referenced for future deployments or updates where you can just run `deploy` again!
 
 ## Web App
 
@@ -28,49 +55,11 @@ The Orbiter App makes it simple to deploy your site. Simply login, click on "Cre
 
 Told you it was easy
 
-## CLI
-
-If you're like me (Steve 👋) you probably prefer a CLI flow, and Orbiter has you covered!
-
-First you'll want to install the CLI by running the following command:
-
-```bash
-npm i -g orbiter-cli
-```
-
-Once installed you can either authenticate using an API Key (created on the [API Keys Page](https://app.orbiter.host/api-keys))
-
-```bash
-orbiter auth
-```
-
-Or by using an OAuth login
-
-```bash
-orbiter login -p google # or github
-```
-
-If you're using a framework like Astro or React, go ahead and build it to create the folder that will be uploaded
-
-```bash
-npm run build
-```
-
-This will create a folder like `dist` or `out`.
-
-Now you can simply run the `deploy` command
-
-```bash
-orbiter deploy
-```
-
-This will setup your project with an `orbiter.json` configuration file that will be referenced for future deployments or updates where you can just run `deploy` again!
-
 ## Automated GitHub Deployments
 
 For those who like to just `git push` and forget about it, the [Orbiter GitHub Actions](/github-actions-and-hooks) are the perfect solution. Check out our guide on how to use them!
 
-<LinkCard title="GitHub Actions & Hooks" description="Learn how to automatically deploy and update your site using GitHub Actions and Hooks" href="/github-actions-and-hooks" />
+<Button href="/github-actions-and-hooks">GitHub Actions & Hooks</Button>
 
 ## API
 

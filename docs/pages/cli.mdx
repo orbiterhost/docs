@@ -3,25 +3,27 @@ title: CLI
 description: Supercharge your site organization with the Orbiter CLI
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+# CLI
 
 A CLI for creating and managing static sites on [Orbiter](https://orbiter.host)
 
 Before installing make sure you already have an account; sign up at [app.orbiter.host](https://orbiter.host).
 
-<Aside type="note">Currently the CLI does not support native Windows. If you are using Windows plase use through [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)!</Aside>
+:::note
+Currently the CLI does not support native Windows. If you are using Windows plase use through [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+:::
 
 ## Installation
 
 The orbiter-cli is an NPM package you can download with manager of choice.
 
-```bash
+```bash [terminal]
 npm i -g orbiter-cli
 ```
 
 Confirm that it was installed successfully by running the main command
 
-```bash
+```bash [terminal]
 orbiter
 ```
 
@@ -29,7 +31,7 @@ orbiter
 
 Running the `orbiter` command will reveal the available subcommands
 
-```bash
+```bash [terminal]
 orbiter <subcommand>
 > Upload and deploy static sites with Orbiter.host
 
@@ -44,6 +46,8 @@ where <subcommand> can be one of:
 - rollback - Rollback a site to a previous version
 - delete - Delete an existing site
 - deploy - Deploy your site using configuration from orbiter.json or create new deployment
+- miniapp - Create a new Farcaster Mini App ready to deploy
+- new - Create a new app ready to deploy
 
 For more help, try running `orbiter <subcommand> --help`
 ```
@@ -52,7 +56,7 @@ For more help, try running `orbiter <subcommand> --help`
 
 Start by running `login` including your `--provider` (shorthand `-p`) of choice (`google` or `github`)
 
-```bash
+```bash [terminal]
 orbiter login
 > Login with OAuth
 
@@ -74,7 +78,7 @@ An alternative way to authenticate the CLI is with an Orbiter API key. This can 
 Orbiter will also look for the enviornment variable `ORBITER_API_KEY` for an API key to authorize the CLI
 :::
 
-```bash
+```bash [terminal]
 orbiter auth
 > Authenticate using an API key
 
@@ -91,11 +95,26 @@ orbiter auth # Will prompt you for the key
 orbiter auth --key <YOUR_API_KEY> # Will bypass the prompt and authorize
 ```
 
+### `new`
+
+In just one command create a new project through an available template and deploy
+
+```bash [terminal
+orbiter new
+> Create a new app ready to deploy
+
+ARGUMENTS:
+  [name] - Name of the new project [optional]
+
+FLAGS:
+  --help, -h - show help
+```
+
 ### `deploy`
 
 A one stop shop command to deploy your Orbiter site, whether it's brand new or updating an existing one. Running this command by itself will give you prompts to setup your site and save the configuration to an `orbiter.json` file in the root of your project directory. The command also includes flags if you want to bypass the prompts.
 
-```bash
+```bash [terminal]
 orbiter deploy
 > Deploy your site using configuration from orbiter.json or create new deployment
 
@@ -117,7 +136,7 @@ orbiter deploy
 
 Uploads and create a new site on Orbiter. Must include the `--domain` or `-d` for the default subdomain of the site. After providing a name give the path to the file or folder of the website you are creating, must contain an `index.html` file.
 
-```bash
+```bash [terminal]
 orbiter create
 > Upload and create a new site on Orbiter
 
@@ -145,7 +164,7 @@ Site created: https://mysite.orbiter.website
 
 List all sites currently on your Orbiter account. You can filter by domain with `-d` followed by the subdomain of the site.
 
-```bash
+```bash [terminal]
 orbiter list
 > List existing sites for your account
 
@@ -186,7 +205,7 @@ This will return the following JSON response from the API:
 
 Update an existing site with a file or folder. You can target a site with either the `--siteId | -s` or the `--domain | -d` (subdomain) followed by the updated folder or file. Both the subdomain and site ID can be found by using `orbiter list`.
 
-```bash
+```bash [terminal]
 orbiter update
 > Update a site with a new file or folder
 
@@ -215,7 +234,7 @@ Versions are only available on paid plans
 
 List previous versions of a site for a given subdomain, ie `<subdomain>.orbiter.website`. the `cid` listed in the response can be used in `rollback` to rollback a site to a previous version.
 
-```bash
+```bash [terminal]
 orbiter versions
 > List versions of your website
 
@@ -258,7 +277,7 @@ Rollbacks are only available on paid plans
 
 Rollback a site to a previous version using the `subdomain` and the `cid` of the previous version to update it. Use `versions` to get the previous versions for a site.
 
-```bash
+```bash [terminal]
 orbiter rollback
 > Rollback a site to a previous version
 
@@ -278,7 +297,7 @@ orbiter rollback <subdomain> <cid>
 
 Delete an existing site using the site ID which can be obtained by using `orbiter list`
 
-```bash
+```bash [terminal]
 orbiter delete
 > Delete an existing site
 

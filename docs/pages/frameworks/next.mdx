@@ -3,7 +3,7 @@ title: Next.js
 description: Host your Next.js site on Orbiter
 ---
 
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+# Next.js
 
 In this guide we’ll show you how you can host your Next.js project on Orbiter.
 
@@ -15,42 +15,55 @@ Orbiter only supports static sites, which means features like API routes or serv
 
 Start up a new Next.js project with the following command:
 
-```bash
+```bash [terminal]
 npx create-next-app@latest orbiter-site
 ```
 
 Select your preferences for your app, then once complete run the following command to move into the project and spin up the dev server
 
-```bash
+```bash [terminal]
 cd orbiter-site
 npm run dev
 ```
 
 Go ahead and run each of those one at a time, then you should have a local dev server at [`http://localhost:3000`](http://localhost:3000) which you can visit and see the starter template.
 
-## Build
-
 Once you have your site edited and ready to go, close the dev server and add the following line to the `next.config.ts` file.
 
-```typescript {4}
+```typescript
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export'
+  output: 'export' // [!code focus]
 };
 
 export default nextConfig;
 ```
 
-Then run the build command
 
-```bash
+## Deploy
+
+Install and authorize the `orbiter-cli` with your [API Key](https//app.orbiter.host/api-keys)
+
+```bash [terminal]
+npm i -g orbiter-cli
+
+orbiter auth
+```
+
+Deploy in one command
+
+```bash [terminal]
+orbiter deploy
+```
+
+Alternatively you can deploy through the web app. First build the project.
+
+```bash [terminal]
 npm run build
 ```
 
 This should create a `out` folder in your project directory.
-
-## Deploy
 
 Login to app.orbiter.host, then click new site in the top right. From there you can either drag the `out` folder into the drop zone or use the “select folder” button snd locate the `out` folder. Choose a subdomain for your free [orbiter.website](http://orbiter.website) handle, then click submit.
 
@@ -68,38 +81,3 @@ Login to app.orbiter.host, then click new site in the top right. From there you 
 In just a moment your site should be ready to visit, which you can do by clicking on the domain on the site card!
 
 If you prefer a CLI experience check out the docs [here](/cli). It's as simple as these three commands:
-
-```bash
-npm i -g orbiter-cli
-
-orbiter login -p google # or github
-
-orbiter create -d my-site ./out
-```
-
-## Additional Resources
-
-<CardGrid>
-
-<LinkCard
-  title="More Features"
-  href="https://orbiter.host/pricing"
-  description="Check out what you can unlock with our affordable pricing plans"
-/>
-<LinkCard
-  title="What is Orbiter?"
-  href="/what-is-orbiter"
-  description="See what powers Orbiter behind the scenes"
-/>
-<LinkCard
-  title="Orbiter Blog"
-  href="https://orbiter.host/blog"
-  description="Check out some of our tutorials and musing about bringing fun back to the web"
-/>
-<LinkCard
-  title="Orbiter CLI"
-  href="/cli"
-  description="Supercharge your site management speeds with our CLI"
-/>
-
-</CardGrid>

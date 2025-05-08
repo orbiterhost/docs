@@ -3,7 +3,7 @@ title: Hugo
 description: Host your Hugo site on Orbiter
 ---
 
-import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+# Hugo
 
 In this guide we’ll show you how you can host your Hugo project on Orbiter.
 
@@ -11,13 +11,13 @@ In this guide we’ll show you how you can host your Hugo project on Orbiter.
 
 [Install Hugo](https://gohugo.io/installation/macos/) on your machine, then start up a new Hugo project with the following command:
 
-```bash
+```bash [terminal[
 hugo new site orbiter-site
 ```
 
 Once complete run the following commands
 
-```bash
+```bash [terminal]
 cd orbiter-site
 git init
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
@@ -29,7 +29,7 @@ Go ahead and run each of those one at a time, then you should have a local dev s
 
 Let's add a new post by running the following command:
 
-```bash
+```bash [terminal]
 hugo new content content/posts/my-first-post.md
 ```
 
@@ -49,7 +49,7 @@ This is a simple example post that will be part of my Hugo site. It will be host
 
 Stop the server with `ctrl-c` then restart it with the command below
 
-```bash
+```bash [terminal]
 hugo server -D
 ```
 
@@ -57,7 +57,7 @@ hugo server -D
 
 Once you have your site edited and ready to go, close the dev server and run the command below
 
-```bash
+```bash [terminal]
 hugo
 ```
 
@@ -65,7 +65,27 @@ This should create a `public` folder in your project directory which is where al
 
 ## Deploy
 
-Login to app.orbiter.host, then click new site in the top right. From there you can either drag the `public` folder into the drop zone or use the “select folder” button snd locate the `public` folder. Choose a subdomain for your free [orbiter.website](http://orbiter.website) handle, then click submit.
+Install and authorize the `orbiter-cli` with your [API Key](https//app.orbiter.host/api-keys)
+
+```bash [terminal]
+npm i -g orbiter-cli
+
+orbiter auth
+```
+
+Deploy in one command
+
+```bash [terminal]
+orbiter deploy
+```
+
+Select the following settnings for Hugo
+- Build Command: `hugo`
+- Build Directory: `public`
+
+Alternatively you can deploy through the web app by first building the site with the `hugo`
+
+Then login to [app.orbiter.host](https://app.orbiter.host), then click new site in the top right. From there you can either drag the `public` folder into the drop zone or use the “select folder” button snd locate the `public` folder. Choose a subdomain for your free [orbiter.website](http://orbiter.website) handle, then click submit.
 
 <video
   autoPlay
@@ -79,40 +99,3 @@ Login to app.orbiter.host, then click new site in the top right. From there you 
 ></video>
 
 In just a moment your site should be ready to visit, which you can do by clicking on the domain on the site card!
-
-If you prefer a CLI experience check out the docs [here](/cli). It's as simple as these three commands:
-
-```bash
-npm i -g orbiter-cli
-
-orbiter login -p google # or github
-
-orbiter create -d my-site ./public
-```
-
-## Additional Resources
-
-<CardGrid>
-
-<LinkCard
-  title="More Features"
-  href="https://orbiter.host/pricing"
-  description="Check out what you can unlock with our affordable pricing plans"
-/>
-<LinkCard
-  title="What is Orbiter?"
-  href="/what-is-orbiter"
-  description="See what powers Orbiter behind the scenes"
-/>
-<LinkCard
-  title="Orbiter Blog"
-  href="https://orbiter.host/blog"
-  description="Check out some of our tutorials and musing about bringing fun back to the web"
-/>
-<LinkCard
-  title="Orbiter CLI"
-  href="/cli"
-  description="Supercharge your site management speeds with our CLI"
-/>
-
-</CardGrid>
