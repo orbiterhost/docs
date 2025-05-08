@@ -9,10 +9,8 @@
     "preview": "vocs preview"
   },
   "dependencies": {
-    "lucide-react": "^0.508.0",
     "react": "latest",
     "react-dom": "latest",
-    "tailwind-merge": "^3.2.0",
     "vocs": "latest"
   },
   "devDependencies": {
