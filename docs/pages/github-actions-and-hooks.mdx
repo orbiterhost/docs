@@ -87,6 +87,25 @@ On your next commit to your main branch you should see under the actions tab tha
 
 ::::
 
+### Alternative Flows
+
+There are some cases where your site may not use a JavaScript framework or something that needs to build separately. In these cases you can build your own workflow that is similar to the one above, except you can manually setup your install and build steps. The only thing you really need for Orbiter is the `update` comand.
+
+```yaml
+# ...Rest of the flow
+      - name: install dependencies
+        run: |
+          bundle install --path vendor/bundle
+          bundle exec jekyll build --config _config.yml,_config_development.yml --destination public
+
+      - name: Deploy to Orbiter
+        shell: bash
+        env:
+          ORBITER_API_KEY: ${{ secrets.ORBITER_API_KEY }}
+          SOURCE: github-action
+        run: npx orbiter-cli update -d my-site public # [!code focus]
+```
+
 ## Git Commit Hooks
 
 Another apporach to automating deployments is creating a post-commit hook that runs anytime you make a local commit. It uses the same API/CLI under the hood and will require having an existing project as well as an API key.
