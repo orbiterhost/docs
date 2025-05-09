@@ -93,17 +93,17 @@ There are some cases where your site may not use a JavaScript framework or somet
 
 ```yaml
 # ...Rest of the flow
-      - name: install dependencies
-        run: |
-          bundle install --path vendor/bundle
-          bundle exec jekyll build --config _config.yml,_config_development.yml --destination public
+  - name: install dependencies
+    run: |
+      bundle install --path vendor/bundle
+      bundle exec jekyll build --config _config.yml,_config_development.yml --destination public
 
-      - name: Deploy to Orbiter
-        shell: bash
-        env:
-          ORBITER_API_KEY: ${{ secrets.ORBITER_API_KEY }}
-          SOURCE: github-action
-        run: npx orbiter-cli update -d my-site public # [!code focus]
+  - name: Deploy to Orbiter
+    shell: bash
+    env:
+      ORBITER_API_KEY: ${{ secrets.ORBITER_API_KEY }}
+      SOURCE: github-action
+    run: npx orbiter-cli update -d my-site public # [!code focus]
 ```
 
 ## Git Commit Hooks
