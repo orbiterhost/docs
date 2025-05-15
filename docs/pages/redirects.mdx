@@ -1,0 +1,41 @@
+---
+title: Redirects & Custom 404
+description: Use redirects to help map routes to new locations or to a custom 404 page
+---
+
+# Redirects
+
+::::note
+Redirects and Custom 404 pages are only available on paid plans
+::::
+
+With Orbiter you can setup redirects to help navigate your users to new paths or completely external ones. We follow the same patterns as other static site hosting platforms for redirects so you can easily move your redirects to Orbiter or vice versa.
+
+To add redirects, create a file called `_redirects` with no file extension. You will want this to be in your root build folder, ie something like your `public` folder so it can be accessed at `https://mysite.com/_redirects`. The contents of the file should look like this:
+
+```yaml
+/old-path   /new-path
+/some-post  /post/some-post
+/orbiter    https://orbiter.host
+```
+
+This pattern follows a simple `source -> destination` pattern, where the `source` is the old page and the `destination` is where you want to redirect your user to. Once you have this file saved simply deploy your app to Orbiter.
+
+```bash [terminal]
+orbiter deploy
+```
+
+That's it! We handle the rest; isn't that lovely?
+
+## Custom 404 Page
+
+At the moment if someone tries to visit a path on your app that does not exist they'll simply be directed to the root path `/`. If you would prefer to redirect them to a custom 404 page you can designate it in the `_redirects` file using the `404` as the source, and the path to your custom 404 page as the `destination`.
+
+```yaml
+/old-path   /new-path
+/some-post  /post/some-post
+/orbiter    https://orbiter.host
+404         /404 # [!code focus]
+```
+
+With this setup anyone who visits a non existant page they will be sent to the destination path.
