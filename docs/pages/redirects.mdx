@@ -19,13 +19,23 @@ To add redirects, create a file called `_redirects` with no file extension. You 
 /orbiter    https://orbiter.host
 ```
 
-This pattern follows a simple `source -> destination` pattern, where the `source` is the old page and the `destination` is where you want to redirect your user to. Once you have this file saved simply deploy your app to Orbiter.
+This pattern follows a simple `source -> destination` pattern, where the `source` is the old page and the `destination` is where you want to redirect your user to. One more optional parameter in the layout is a custom status code following `destination`.
+
+```yaml
+/old-path   /new-path               301 # [!code hl]
+/some-post  /post/some-post         307 # [!code hl]
+/orbiter    https://orbiter.host
+```
+
+By default Orbiter will use a `301` status code if not specified in the redirects file.
+
+Once you have this file saved simply deploy your app to Orbiter.
 
 ```bash [terminal]
 orbiter deploy
 ```
 
-That's it! We handle the rest; isn't that lovely?
+That's it! We handle the rest 😎
 
 ## Custom 404 Page
 
