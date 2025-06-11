@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
 .vocs_HomePage_logo {
-	height: 100px !important;
+	height: auto !important;
+	width: 100% !important;
 }

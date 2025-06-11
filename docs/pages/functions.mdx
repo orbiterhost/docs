@@ -1,0 +1,95 @@
+---
+title: Funtions
+description: Host your server on Orbiter
+---
+
+import { Button } from 'vocs/components'
+
+# Functions
+
+::::warning
+This feature is still in Beta
+::::
+
+Funtions is a new feature that allows you to deploy serverless code connected to an existing Orbiter site. For example, if you have the site `bhvr.orbiter.website`, you can deploy server API code that would be accessible at `bhvr.orbiter.website/api`.
+
+
+## Quickstart
+
+This will get you started with a basic deployment to Orbiter Functions
+
+::::steps
+
+### Update CLI
+
+Make sure the Orbiter CLI is at the latest version
+
+```bash [terminal]
+npm i -g orbiter-cli@latest
+```
+
+### Initialize Project
+
+We recommend using Hono for this beta of Functions, so start a new project like so
+
+```bash [terminal]
+npm create hono@latest orbiter-server
+```
+
+Select the template that suits your preference.
+
+### Update Export
+
+Once it's ready to be deployed, make sure the export at the bottom of the file matches the following format:
+
+```typescript [src/index.ts]
+import { Hono } from 'hono'
+
+const app = new Hono()
+
+app.get('/', (c) => {
+  return c.text('Hello Hono!')
+})
+
+export default app // [!code --]
+export default { // [!code ++]
+  async fetch(request: Request, env: any, ctx: any) { // [!code ++]
+    return app.fetch(request, env, ctx) // [!code ++]
+  } // [!code ++]
+} // [!code ++]
+```
+
+### Deploy
+
+In the root of your project run the following command to deploy your server!
+
+```bash [terminal]
+orbiter deploy --server
+```
+
+This will fetch your sites and ask which site you would like the server to be linked to. You must already have the client site deployed on Oribter!
+
+The CLI will also ask for the entry path for your server code, as well as your desired build folder. This will do the following:
+- Save your preferences to an `orbiter.json` file
+- Build and bundle your server code
+- Deploy it to Orbiter
+
+If successful you should see a returned URL where you can access the API!
+
+### ENVs
+
+If you need to use enviornment variables in your server simple create a `.env` file with the values, then include the `--env` flag:
+
+```bash [terminal]
+oribter deploy --server --env
+```
+
+This will automatically scan your `.env` file and include them in the deployment request to Obiter. Orbiter will never be able to see your variables so make sure they are correct!
+
+::::info
+Orbiter is working on the funcitonality to update and edit ENV values in the web app
+::::
+
+## Questions
+
+[Feel free to send us a message!](mailto:steve@orbiter.host,justin@orbier.host)
