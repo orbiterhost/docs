@@ -1,0 +1,25 @@
+---
+title: deploy
+---
+
+### `deploy`
+
+A one stop shop command to deploy your Orbiter site, whether it's brand new or updating an existing one. Running this command by itself will give you prompts to setup your site and save the configuration to an `orbiter.json` file in the root of your project directory. The command also includes flags if you want to bypass the prompts.
+
+```bash [terminal]
+orbiter deploy
+> Deploy your site using configuration from orbiter.json or create new deployment
+
+OPTIONS:
+  --domain, -d <str>       - Domain for the site [optional]
+  --siteId, -s <str>       - ID of existing site [optional]
+  --buildCommand, -b <str> - Build command to run [optional]
+  --buildDir, -o <str>     - Output directory for build [optional]
+
+FLAGS:
+  --help, -h - show help
+
+USAGE:
+
+orbiter deploy
+```

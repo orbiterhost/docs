@@ -1,0 +1,31 @@
+---
+title: create
+---
+
+### `create`
+
+Uploads and create a new site on Orbiter. Must include the `--domain` or `-d` for the default subdomain of the site. After providing a name give the path to the file or folder of the website you are creating, must contain an `index.html` file.
+
+```bash [terminal]
+orbiter create
+> Upload and create a new site on Orbiter
+
+ARGUMENTS:
+  <path> - Path to your build directory (e.g., "dist" or "build") or index.html file
+
+OPTIONS:
+  --domain, -d <str> - Custom domain
+
+FLAGS:
+  --help, -h - show help
+
+USAGE:
+
+orbiter create --domain mysite ./dist
+```
+
+After sucessfull creation the CLI will return the URL of the new site.
+
+```
+Site created: https://mysite.orbiter.website
+```

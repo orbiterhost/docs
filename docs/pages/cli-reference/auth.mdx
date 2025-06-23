@@ -1,0 +1,28 @@
+---
+title: auth
+---
+
+### `auth`
+
+An alternative way to authenticate the CLI is with an Orbiter API key. This can be obtained at [app.orbiter.host/api-keys](https://app.orbiter.host/api-keys). You can either just run `orbiter auth` and it will prompt you for the key and not display it visibly, or if you're using the CLI in an automation you can use the `--key` flag.
+
+:::tip
+Orbiter will also look for the enviornment variable `ORBITER_API_KEY` for an API key to authorize the CLI
+:::
+
+```bash [terminal]
+orbiter auth
+> Authenticate using an API key
+
+OPTIONS:
+  --key, -k <str> - Your API key [optional]
+
+FLAGS:
+  --help, -h - show help
+
+USAGE:
+
+orbiter auth # Will prompt you for the key
+
+orbiter auth --key <YOUR_API_KEY> # Will bypass the prompt and authorize
+```

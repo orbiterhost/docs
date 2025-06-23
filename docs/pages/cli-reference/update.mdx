@@ -1,0 +1,28 @@
+---
+title: update
+---
+
+### `update`
+
+Update an existing site with a file or folder. You can target a site with either the `--siteId | -s` or the `--domain | -d` (subdomain) followed by the updated folder or file. Both the subdomain and site ID can be found by using `orbiter list`.
+
+```bash [terminal]
+orbiter update
+> Update a site with a new file or folder
+
+ARGUMENTS:
+  <path> - Path to your build directory (e.g., "dist" or "build")
+
+OPTIONS:
+  --siteId, -s <str> - ID of the target site [optional]
+  --domain, -d <str> - Domain of the target site [optional]
+
+FLAGS:
+  --help, -h - show help
+
+USAGE:
+
+orbiter update --siteId a5dae6af-ad43-4bb3-bdab-3a4d41b573cc ./new-dist
+
+orbiter update --domain astro-demo ./new-dist
+```

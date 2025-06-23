@@ -1,0 +1,46 @@
+---
+title: versions
+---
+
+### `versions`
+
+:::note
+Versions are only available on paid plans
+:::
+
+List previous versions of a site for a given subdomain, ie `<subdomain>.orbiter.website`. the `cid` listed in the response can be used in `rollback` to rollback a site to a previous version.
+
+```bash [terminal]
+orbiter versions
+> List versions of your website
+
+ARGUMENTS:
+  <domain> - Subdomain for your site, <domain>.orbiter.website
+
+FLAGS:
+  --help, -h - show help
+
+USAGE:
+
+orbiter versions <subdomain>
+```
+
+This will return the following object
+
+```typescript
+{
+  data: [
+    {
+      id: 'string',
+      site_id: 'string',
+      created_at: 'string',
+      organization_id: 'string',
+      cid: 'string',
+      domain: 'string',
+      site_contract: 'string',
+      version_number: number,
+      deployed_by: 'string'
+    },
+  ]
+}
+```

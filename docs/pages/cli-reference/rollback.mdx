@@ -1,0 +1,27 @@
+---
+title: rollback
+---
+
+### `rollback`
+
+:::note
+Rollbacks are only available on paid plans
+:::
+
+Rollback a site to a previous version using the `subdomain` and the `cid` of the previous version to update it. Use `versions` to get the previous versions for a site.
+
+```bash [terminal]
+orbiter rollback
+> Rollback a site to a previous version
+
+ARGUMENTS:
+  <domain> - Subdomain for your site, <domain>.orbiter.website
+  <cid>    - CID of the version you want to roll back to. Use the `versions` command to fetch this information
+
+FLAGS:
+  --help, -h - show help
+
+USAGE:
+
+orbiter rollback <subdomain> <cid>
+```
