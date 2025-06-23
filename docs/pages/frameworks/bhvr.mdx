@@ -1,0 +1,65 @@
+---
+title: bhvr
+description: Host a fullstack app on Orbiter
+---
+
+# bhvr
+
+In this guide we’ll show you how you can host a fullstack app using Orbiter's official stack [bhvr](https://bhvr.dev)
+
+::::info
+Server functions are only available on paid plans, [upgrade today!](https://app.orbiter.host/billing)
+::::
+
+::::steps
+
+### Install Bun
+
+Install [Bun](https://bun.sh) to your machine
+
+:::code-group
+
+```bash [Linux/MacOS]
+curl -fsSL https://bun.sh/install | bash
+```
+
+```bash [Windows]
+powershell -c "irm bun.sh/install.ps1 | iex"
+```
+
+:::
+
+### Install Orbiter CLI
+
+Install the Orbiter CLI with the latest version
+
+```bash [terminal]
+bun install -g orbiter-cli@latest
+```
+
+### Create a New bhvr Project
+
+Orbiter includes a special version of bhvr that has everything you need to have a fullstack app
+
+```bash [terminal]
+orbiter new --template bhvr
+```
+
+This will automatically install, build, and deploy the client and server packages of your bhvr project!
+
+### Deploy
+
+Whenever you need to upload, simply run any of the `deploy` commands
+
+```bash [terminal]
+bun run deploy:client
+bun run deploy:server
+bun run deploy # Deploys both client and server
+```
+
+::::
+
+
+::::tip
+[Visit the official bhvr docs for more info](https://bhvr.dev)
+::::

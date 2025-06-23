@@ -7,20 +7,81 @@ import { Button } from 'vocs/components'
 
 # Functions
 
-::::warning
-This feature is still in Beta
+::::info
+Functions are only available on paid plans, [upgrade today!](https://app.orbiter.host/billing)
 ::::
 
-Funtions is a new feature that allows you to deploy serverless code connected to an existing Orbiter site. For example, if you have the site `bhvr.orbiter.website`, you can deploy server API code that would be accessible at `bhvr.orbiter.website/api`.
+Funtions is a new feature that allows you to deploy serverless code connected to an existing Orbiter site. For example, if you have the site `bhvr.orbiter.website`, you can deploy server API code that would be accessible at `bhvr.orbiter.website/api/`.
 
 
 ## Quickstart
 
 This will get you started with a basic deployment to Orbiter Functions
 
+### bhvr
+
+Orbiter's official stack [bhvr](https://bhvr.dev) (Bun Hono Vite React) offers the perfect setup to build a fullstack app that is portable and easy to use.
+
 ::::steps
 
-### Update CLI
+#### Install Bun
+
+Install [Bun](https://bun.sh) to your machine
+
+:::code-group
+
+```bash [Linux/MacOS]
+curl -fsSL https://bun.sh/install | bash
+```
+
+```bash [Windows]
+powershell -c "irm bun.sh/install.ps1 | iex"
+```
+
+:::
+
+#### Install Orbiter CLI
+
+Install the Orbiter CLI with the latest version
+
+```bash [terminal]
+bun install -g orbiter-cli@latest
+```
+
+#### Create a New bhvr Project
+
+Orbiter includes a special version of bhvr that has everything you need to have a fullstack app
+
+```bash [terminal]
+orbiter new --template bhvr
+```
+
+This will automatically install, build, and deploy the client and server packages of your bhvr project!
+
+#### Deploy
+
+Whenever you need to upload, simply run any of the `deploy` commands
+
+```bash [terminal]
+bun run deploy:client
+bun run deploy:server
+bun run deploy # Deploys both client and server
+```
+
+::::
+
+
+::::tip
+[Visit the official bhvr docs for more info](https://bhvr.dev)
+::::
+
+### Manual Deployment
+
+If you prefer to use a different stack or separate repo for your server you can follow the guide below to setup Orbiter functions manually.
+
+::::steps
+
+#### Install Orbiter CLI
 
 Make sure the Orbiter CLI is at the latest version
 
@@ -28,7 +89,7 @@ Make sure the Orbiter CLI is at the latest version
 npm i -g orbiter-cli@latest
 ```
 
-### Initialize Project
+#### Initialize Project
 
 We recommend using Hono for this beta of Functions, so start a new project like so
 
@@ -38,7 +99,7 @@ npm create hono@latest orbiter-server
 
 Select the template that suits your preference.
 
-### Update Export
+#### Update Export
 
 Once it's ready to be deployed, make sure the export at the bottom of the file matches the following format:
 
@@ -59,7 +120,7 @@ export default { // [!code ++]
 } // [!code ++]
 ```
 
-### Deploy
+#### Deploy
 
 In the root of your project run the following command to deploy your server!
 
@@ -76,6 +137,24 @@ The CLI will also ask for the entry path for your server code, as well as your d
 
 If successful you should see a returned URL where you can access the API!
 
+Whenever you want to update your serer you can just run `orbiter deploy --server` again, or if you want to run without a configuation you can use the `deploy-server` command:
+
+```bash [terminal]
+orbiter deploy-server \
+  --siteId "LINKED_SITE_ID" \
+  --entryFile -e "src/index.ts" \
+  --buildDir "dist"
+```
+
+Info on values needed for `deploy-server`:
+
+- `siteId` - The ID of the site that your server is linked to, can be located by clicking the "&#8505;" icon from the [dashboard](https://app.orbiter.host)
+- `entryFile` - Path to the main file of your server, e.g. `src/index.ts`
+- `buildDir` - The output location of your build directory, can be defaulted to `dist`
+
+
+::::
+
 ### ENVs
 
 If you need to use enviornment variables in your server simple create a `.env` file with the values, then include the `--env` flag:
@@ -86,9 +165,94 @@ oribter deploy --server --env
 
 This will automatically scan your `.env` file and include them in the deployment request to Obiter. Orbiter will never be able to see your variables so make sure they are correct!
 
-::::info
-Orbiter is working on the funcitonality to update and edit ENV values in the web app
+::::tip
+You can also edit ENVs inside the [Orbiter App](https://app.orbiter.host)
 ::::
+
+### GitHub Action
+
+By using `orbiter deploy --server` or `deploy-server` you can setup a GitHub action that will auomatically deploy your server anytime you push to your primary branch or on your own terms. If you are using `orbiter-deploy` Just make sure you have the following info:
+
+- `siteId` - The ID of the site that your server is linked to, can be located by clicking the "&#8505;" icon from the [dashboard](https://app.orbiter.host)
+- `entryFile` - Path to the main file of your server, e.g. `src/index.ts`
+- `buildDir` - The output location of your build directory, can be defaulted to `dist`
+
+Once you have these ready, run the following commands to create `.github/workflows/deploy.yaml` in the root of your project:
+
+```bash [terminal]
+mkdir -p .github/workflows
+touch .github/workflows/deploy.yaml
+```
+
+Then paste the following into `deploy.yaml`, paying careful attention to use your own details in the CLI fields if you are not using `orbiter.json` that is created with `orbiter deploy --server`
+
+:::code-group
+
+```yaml [Manual]
+name: "Deploy to Orbiter"
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Deploy to Orbiter
+        env:
+          ORBITER_API_KEY: ${{ secrets.ORBITER_API_KEY }}
+        run: >
+          bunx orbiter-cli@latest deploy-server
+          --siteId 3c87fed0-7804-4a29-90e3-2b1c0fbbe6b8 # [!code hl]
+          --entryFile src/index.ts # [!code hl]
+          --buildDir dist # [!code hl]
+```
+
+```yaml [orbiter.json]
+name: "Deploy to Orbiter"
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Deploy to Orbiter
+        env:
+          ORBITER_API_KEY: ${{ secrets.ORBITER_API_KEY }}
+        run: >
+          bunx orbiter-cli@latest deploy --server
+```
+
+:::
+
+
+You'll notice that this is looking for the environment variable `ORBITER_API_KEY`, so make sure on GitHub to go to `Settings > Secrets and variables > Actions` and set your Orbiter API key there.
 
 ## Questions
 

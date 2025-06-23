@@ -1,20 +1,20 @@
 {
-  "name": "orbiter-docs",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vocs dev",
-    "build": "vocs build -o ../dist",
-    "preview": "vocs preview"
-  },
-  "dependencies": {
-    "react": "latest",
-    "react-dom": "latest",
-    "vocs": "latest"
-  },
-  "devDependencies": {
-    "@types/react": "latest",
-    "typescript": "latest"
-  }
+	"name": "orbiter-docs",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vocs dev --host",
+		"build": "vocs build -o ../dist",
+		"preview": "vocs preview"
+	},
+	"dependencies": {
+		"react": "latest",
+		"react-dom": "latest",
+		"vocs": "latest"
+	},
+	"devDependencies": {
+		"@types/react": "latest",
+		"typescript": "latest"
+	}
 }

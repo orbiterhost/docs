@@ -80,6 +80,7 @@ export default defineConfig({
 			text: "Frameworks",
 			collapsed: true,
 			items: [
+				{ text: "bhvr", link: "/frameworks/bhvr" },
 				{ text: "React", link: "/frameworks/react" },
 				{ text: "Astro", link: "/frameworks/astro" },
 				{ text: "Next", link: "/frameworks/next" },
@@ -90,10 +91,10 @@ export default defineConfig({
 			text: "Guides",
 			items: [
 				{ text: "Deploy a Site", link: "/deploy" },
+				{ text: "Functions", link: "/functions" },
 				{ text: "Custom Domains", link: "/custom-domains" },
 				{ text: "Redirects & 404s", link: "/redirects" },
 				{ text: "CLI Reference", link: "/cli" },
-				{ text: "Mini Apps", link: "/miniapps" },
 				{ text: "GitHub Actions & Hooks", link: "/github-actions-and-hooks" },
 			],
 		},
