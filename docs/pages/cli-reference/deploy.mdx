@@ -4,7 +4,9 @@ title: deploy
 
 ### `deploy`
 
-A one stop shop command to deploy your Orbiter site, whether it's brand new or updating an existing one. Running this command by itself will give you prompts to setup your site and save the configuration to an `orbiter.json` file in the root of your project directory. The command also includes flags if you want to bypass the prompts.
+A one stop shop command to deploy your Orbiter app, whether it's brand new or updating an existing one. Running this command by itself will give you prompts to setup your site and save the configuration to an `orbiter.json` file in the root of your project directory. The command also includes flags if you want to bypass the prompts.
+
+This command also include a `--server` flag that can be used to deploy a [server function](/functions).
 
 ```bash [terminal]
 orbiter deploy
@@ -15,11 +17,16 @@ OPTIONS:
   --siteId, -s <str>       - ID of existing site [optional]
   --buildCommand, -b <str> - Build command to run [optional]
   --buildDir, -o <str>     - Output directory for build [optional]
+  --config, -c <str>       - Optional path to existing orbiter.json config file [optional]
 
 FLAGS:
+  --server   - Deploy server/API code instead of static site
+  --env      - Include local .env file variables with server deployment
   --help, -h - show help
 
 USAGE:
 
-orbiter deploy
+orbiter deploy # Use for client sites
+
+orbiter deploy --server # Use for server functions
 ```

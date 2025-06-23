@@ -101,10 +101,11 @@ export default defineConfig({
 			text: "CLI Reference",
 			items: [
 				{ text: "Installation", link: "/cli-reference/" },
-				{ text: "login", link: "/cli-reference/login" },
 				{ text: "auth", link: "/cli-reference/auth" },
+				{ text: "login", link: "/cli-reference/login" },
 				{ text: "new", link: "/cli-reference/new" },
 				{ text: "deploy", link: "/cli-reference/deploy" },
+				{ text: "deploy-server", link: "/cli-reference/deploy-server" },
 				{ text: "create", link: "/cli-reference/create" },
 				{ text: "list", link: "/cli-reference/list" },
 				{ text: "update", link: "/cli-reference/update" },

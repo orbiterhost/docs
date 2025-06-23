@@ -1,0 +1,36 @@
+---
+title: deploy-server
+---
+
+### `deploy-server`
+
+This command is similar to `orbiter deploy --server` except it provides more control over direct values you can pass in.
+
+::::tip
+[Learn more about functions with Orbiter](/functions)
+::::
+
+```bash [terminal]
+orbiter deploy-server
+> Deploy server/API code to Orbiter
+
+OPTIONS:
+  --siteId, -s <str>       - ID of existing site to deploy server to [optional]
+  --entryFile, -e <str>    - Path to server entry file (e.g., src/index.ts) [optional]
+  --buildDir, -o <str>     - Output directory for build [optional]
+  --buildCommand, -b <str> - Custom build command (optional - esbuild used by default) [optional]
+  --config, -c <str>       - Path to existing orbiter.json config file [optional]
+
+FLAGS:
+  --env      - Include local .env file variables with server deployment
+  --help, -h - show help
+
+USAGE:
+
+orbiter deploy-server # Generate orbiter.json with info
+
+orbter deploy-server \ # Use hard coded values
+  --siteId "CLIENT_SITE_ID" \
+  --entryFile "src/index.ts" \
+  --buildDir "dist"
+```
