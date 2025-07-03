@@ -60,6 +60,10 @@ export default defineConfig({
 			link: "https://app.orbiter.host/api-keys",
 		},
 		{
+			text: "Pricing",
+			link: "/pricing",
+		},
+		{
 			text: "Blog",
 			link: "https://orbiter.host/blog",
 		},

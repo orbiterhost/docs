@@ -2,17 +2,7 @@
 layout: landing
 ---
 
-import { HomePage } from 'vocs/components'
+import { Landing } from "../components/Landing"
+import "../landing.css"
 
-<HomePage.Root>
-  <HomePage.Logo />
-  <HomePage.Tagline>The easiest way to host static sites and apps</HomePage.Tagline>
-  <HomePage.InstallPackage name="orbiter-cli" type="install" />
-  <HomePage.Description>
-  Welcome to the official Orbiter Docs! Best way to get started is clicking the button above, or taking a look at the links below.
-  </HomePage.Description>
-  <HomePage.Buttons>
-    <HomePage.Button href="/quickstart" variant="accent">Get started</HomePage.Button>
-    <HomePage.Button href="https://github.com/orbiterhost">GitHub</HomePage.Button>
-  </HomePage.Buttons>
-</HomePage.Root>
+<Landing />
