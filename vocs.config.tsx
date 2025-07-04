@@ -65,7 +65,7 @@ export default defineConfig({
 		},
 		{
 			text: "Blog",
-			link: "https://orbiter.host/blog",
+			link: "/blog",
 		},
 		{
 			text: "Support",
