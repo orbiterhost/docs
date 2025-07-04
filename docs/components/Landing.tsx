@@ -20,7 +20,7 @@ export function Landing() {
 				<h1 className="text-center text-6xl font-black">
 					Free Your App from Vendor Lock-in
 				</h1>
-				<h3 className="text-2xl font-semibold">
+				<h3 className="text-center text-2xl font-semibold">
 					Open Source Web Hosting Without Walled Gardens
 				</h3>
 			</div>

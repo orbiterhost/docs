@@ -56,8 +56,8 @@ export default defineConfig({
 	},
 	topNav: [
 		{
-			text: "API Keys",
-			link: "https://app.orbiter.host/api-keys",
+			text: "Dashboard",
+			link: "https://app.orbiter.host",
 		},
 		{
 			text: "Pricing",
