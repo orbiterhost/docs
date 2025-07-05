@@ -3,7 +3,7 @@ import { defineConfig } from "vocs";
 export default defineConfig({
 	title: "Orbiter",
 	logoUrl: "/light_text_logo.png",
-	baseUrl: "https://docs-test.orbiter.website",
+	baseUrl: "https://docs.orbiter.website",
 	description: "Official Documation for Orbiter",
 	iconUrl: "/icon.png",
 	ogImageUrl: "/og.png",
