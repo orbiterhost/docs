@@ -2,9 +2,26 @@ import { Button } from "./Button";
 
 export function PricingTable() {
 	return (
-		<div className="flex flex-col items-center justify-center h-full gap-12">
+		<div
+			className="flex flex-col items-center justify-center sm:h-[80vh] my-12 sm:my-auto min-h-[80vh] gap-12 relative"
+			style={{
+				backgroundImage: "url('/bg.png')",
+				backgroundPosition: "center",
+				backgroundRepeat: "no-repeat",
+				backgroundSize: "cover",
+				zIndex: 0,
+			}}
+		>
+			<div
+				className="absolute inset-0 pointer-events-none"
+				style={{
+					backgroundColor: "rgba(18, 17, 19, 0.7)",
+					zIndex: -1,
+				}}
+			/>
+
 			<h1 className="font-black text-5xl">Pricing</h1>
-			<div className="flex sm:flex-row flex-col gap-6 justify-center items-start w-full">
+			<div className="flex sm:flex-row flex-col gap-6 justify-center items-center w-full">
 				<div className=" text-white w-[300px] bg-[#121113] rounded-lg shadow-md">
 					<div className="flex flex-col space-y-1.5 p-6">
 						<h3 className="text-2xl font-semibold leading-none tracking-tight">
@@ -14,7 +31,7 @@ export function PricingTable() {
 						<p className="text-xs text-[#A3A3A4]"> $0/month </p>
 					</div>
 					<div className="p-6 pt-0 flex text-sm flex-col justify-between gap-28">
-						<ul className="list-disc ml-4 space-y-2">
+						<ul className="list-disc! ml-4! space-y-2">
 							<li>2 projects</li>
 							<li>1 team member</li>
 							<li>Free subdomain</li>
@@ -39,8 +56,8 @@ export function PricingTable() {
 						<p className="text-xs text-[#A3A3A4]"> $9/month </p>
 					</div>
 					<div className="p-6 pt-0 flex flex-col text-sm justify-between gap-12">
-						<ul className="list-disc ml-4 space-y-2">
-							<li className="underline font-bold text-[#FFB757]">
+						<ul className="list-disc! ml-4! space-y-2">
+							<li className="font-bold text-[#FFB757]">
 								Support independent hosting
 							</li>
 							<li>Unlimited projects</li>
@@ -70,9 +87,9 @@ export function PricingTable() {
 						</p>
 						<p className="text-xs text-[#A3A3A4]"> $19/month </p>
 					</div>
-					<div className="p-6 pt-0 text-sm flex flex-col justify-between gap-4">
-						<ul className="list-disc ml-4 space-y-2">
-							<li className="underline font-bold text-[#FFB757]">
+					<div className="p-6 pt-0 text-sm flex flex-col justify-between gap-12">
+						<ul className="list-disc! ml-4! space-y-2">
+							<li className="font-bold text-[#FFB757]">
 								Support independent hosting
 							</li>
 							<li>Unlimited projects</li>
