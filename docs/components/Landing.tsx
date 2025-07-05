@@ -15,12 +15,29 @@ export function Landing() {
 	};
 
 	return (
-		<main className="flex w-full h-full mx-auto flex-col items-center justify-center gap-12 p-4">
+		<main
+			className="flex w-full h-[80vh] mx-auto flex-col items-center justify-center gap-12 p-4 relative"
+			style={{
+				backgroundImage: "url('/bg.png')",
+				backgroundPosition: "center",
+				backgroundRepeat: "no-repeat",
+				backgroundSize: "cover",
+				zIndex: 0,
+			}}
+		>
+			<div
+				className="absolute inset-0 pointer-events-none"
+				style={{
+					backgroundColor: "rgba(18, 17, 19, 0.7)",
+					zIndex: -1,
+				}}
+			/>
+
 			<div className="flex flex-col items-center gap-12">
-				<h1 className="text-center text-6xl font-black">
+				<h1 className="text-center sm:text-6xl text-4xl font-black">
 					Free Your App from Vendor Lock-in
 				</h1>
-				<h3 className="text-center text-2xl font-semibold">
+				<h3 className="text-center sm:text-2xl text-lg font-semibold">
 					Open Source Web Hosting Without Walled Gardens
 				</h3>
 			</div>
