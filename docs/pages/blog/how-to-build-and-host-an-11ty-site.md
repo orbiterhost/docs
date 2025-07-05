@@ -7,6 +7,9 @@ title: 'How To Build and Host an 11ty Site'
 description: "11ty is a fantastic static site generator with tons of community support. Let's see how to build and host an 11ty site."
 heroImage: 'https://cdn.orbiter.host/ipfs/bafkreidumpel3e5h2qew3hmzee5363m77u4bbdcrb4xr6utvazy4he7dky'
 ---
+
+[← Back to Blog Posts](/blog)
+
 # How To Build and Host an 11ty Site
 
 ![How To Build and Host an 11ty Site](https://cdn.orbiter.host/ipfs/bafkreidumpel3e5h2qew3hmzee5363m77u4bbdcrb4xr6utvazy4he7dky)
@@ -98,3 +101,6 @@ This is fine, but we want to add some of that old school web feel with some styl
 It’s actually really simple. Back in your [`index.md`](http://index.md) file, add the following to the top of your page:
 
 ```jsx
+---
+
+[← Back to Blog Posts](/blog)

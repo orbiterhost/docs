@@ -7,6 +7,9 @@ title: 'The Static Website Manifesto'
 description: 'Building websites used to be fun. Let’s bring back the joy of putting your work online. This is our manifesto.'
 heroImage: 'https://orbiter.host/blog/html.png'
 ---
+
+[← Back to Blog Posts](/blog)
+
 # The Static Website Manifesto
 
 ![The Static Website Manifesto](https://orbiter.host/blog/html.png)
@@ -47,3 +50,6 @@ As server-side rendering gains popularity, we're taking a stand for static sites
 Don't feel like learning complex deployment processes? No problem. Orbiter gives you the freedom to work the way you want. We've built the simplest static site hosting platform on the web because we believe in making the web flexible, fun, and fast again.
 
 Ready to make web hosting fun again? [Join us at Orbiter and put your website online in seconds](https://app.orbiter.host?ref=blog).
+---
+
+[← Back to Blog Posts](/blog)

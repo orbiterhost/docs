@@ -7,6 +7,9 @@ title: "What We Learned In The First Month Of Building a Website Hosting Platfor
 description: "Orbiter was launched on January 1, 2025. This is a look back at the first month running the project."
 heroImage: "https://cdn.orbiter.host/ipfs/bafkreiciwgz3tsuosumfeabsdooshbl7xvl3iien2klz6qgl3vvyniomzu"
 ---
+
+[← Back to Blog Posts](/blog)
+
 # What We Learned In The First Month Of Building a Website Hosting Platform
 We launched Orbiter on January 1, 2025. That makes for a nice, clean starting point for a new venture. It also makes writing posts like this much easier. Let’s take a look back and what we accomplished in January.
 
@@ -125,3 +128,7 @@ Still, as mentioned above, we’re learning who our ideal customer profile is st
 January was a fantastic month for us. We were so happy with the usage, the product, and what we learned. Bring on February!
 
 If you want to host your static websites and web apps the easy way, [try Orbiter today](https://orbiter.host/pricing).
+
+---
+
+[← Back to Blog Posts](/blog)

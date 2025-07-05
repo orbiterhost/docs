@@ -7,6 +7,9 @@ title: "How To Host a React Site"
 description: "Hosting a static React website is simple. This tutorial shows you all the steps, including setting up the site and uploading to Orbiter."
 heroImage: "https://cdn.orbiter.host/ipfs/bafkreihw7424u4ptnoy33qzee32ebeydm3d45ps74jvdqgmxfoxlhsnzm4"
 ---
+
+[← Back to Blog Posts](/blog)
+
 # How To Host a React Site
 
 ![How To Host a React Site](https://cdn.orbiter.host/ipfs/bafkreihw7424u4ptnoy33qzee32ebeydm3d45ps74jvdqgmxfoxlhsnzm4)
@@ -106,3 +109,6 @@ And just like that, you have a hosted website built in React!
 ## Conclusion
 
 Hosting React sites and apps doesn’t need to be complicated. With Orbiter, you can do it in a few seconds. If you have a React site you’re ready to host, [give Orbiter a shot today.](https://orbiter.host)
+---
+
+[← Back to Blog Posts](/blog)

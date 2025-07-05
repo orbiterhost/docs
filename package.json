@@ -9,6 +9,7 @@
 		"preview": "vocs preview"
 	},
 	"dependencies": {
+		"clsx": "^2.1.1",
 		"glob": "^11.0.3",
 		"react": "latest",
 		"react-dom": "latest",

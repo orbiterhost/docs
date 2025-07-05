@@ -7,6 +7,9 @@ title: "How To Host a Gatsby Blog on Orbiter"
 description: "Gatsby is one of the most popular static site frameworks on the market. Let's explore how to host a Gatsby blog on Orbiter."
 heroImage: "https://cdn.orbiter.host/ipfs/bafybeiff42un3t63hyq6fkod7ceaivetubq5glu2ulgn2otdiid2l2hvbq"
 ---
+
+[← Back to Blog Posts](/blog)
+
 # How To Host a Gatsby Blog on Orbiter
 [Gatsby](https://www.gatsbyjs.com/docs) is one of the most popular static site generators available. Started in 2015 as an open source project, with a company being formed a few years later around hosting services, Gatsby has seen thousands of developers build sites on the React-based site generator. In 2023, Netlify acquired Gatsby and has been integrating the hosting services into their platform since.
 
@@ -250,3 +253,7 @@ Here’s my site: [https://gatsby-blog-tutorial.orbiter.website/](https://gatsby
 Gatsby is a popular framework for generating static sites, especially static sites with a blog. It’s built on top of React, so if you already know react, customizing a Gatsby site is going to be smooth for you.
 
 Hosting a Gatsby site couldn’t be simpler with Orbiter. Just drag and drop or select your `public` folder, and you’ve got your site online. [Get started with Orbiter today](https://orbiter.host)!
+
+---
+
+[← Back to Blog Posts](/blog)

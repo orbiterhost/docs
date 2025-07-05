@@ -7,6 +7,9 @@ title: "How to Build and Deploy Vue.js Sites with Vite and Orbiter in Under 5 Mi
 description: "Vue.js is one of the more popular single page app frameworks on the market. Let's build and deploy a site with it."
 heroImage: https://cdn.orbiter.host/ipfs/bafybeidl7qy6kiqkbjzgfpngy7axctmr2n7m7uolxb6hksvwbe6du5cfcq
 ---
+
+[← Back to Blog Posts](/blog)
+
 # How to Build and Deploy Vue.js Sites with Vite and Orbiter in Under 5 Minutes
 
 ![How to Build and Deploy Vue.js Sites with Vite and Orbiter in Under 5 Minutes](https://cdn.orbiter.host/ipfs/bafybeidl7qy6kiqkbjzgfpngy7axctmr2n7m7uolxb6hksvwbe6du5cfcq)
@@ -417,3 +420,7 @@ Remember that Orbiter uses IPFS and blockchain technology behind the scenes, whi
 - Try integrating other Vue.js libraries like Pinia or Vue Router
 
 Happy coding!
+
+---
+
+[← Back to Blog Posts](/blog)

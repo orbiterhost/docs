@@ -7,6 +7,10 @@ title: 'How To Convert Your WordPress Site Into a Static Site'
 description: 'If you have ever wanted to migrate your WordPress site to static HTML, this is your guide.'
 heroImage: '/blog/wordpress.jpg'
 ---
+
+[← Back to Blog Posts](/blog)
+
+
 # How To Convert Your WordPress Site Into a Static Site
 
 ![How To Convert Your WordPress Site Into a Static Site](/blog/wordpress.jpg)
@@ -151,3 +155,6 @@ Today, we’re going to walk through how to do exactly that and how to host the 
 Static sites allow for more flexibility and portability. With WordPress, you are locked into WordPress (even if it is open source software). With a static site, you can host your site almost anywhere. If you want to move off Orbiter, it’s dead simple (though we hope you don’t!).
 
 If you’re ready to move from WordPress to static sites, [give Orbiter a try for free](https://app.orbiter.com?ref=blog).
+---
+
+[← Back to Blog Posts](/blog)

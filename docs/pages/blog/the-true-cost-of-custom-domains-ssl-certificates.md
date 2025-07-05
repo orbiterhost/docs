@@ -7,17 +7,20 @@ title: The True Cost of Custom Domains
 description: Custom domains and SSL certificates aren't free, and here's why.
 heroImage: https://cdn.orbiter.host/ipfs/bafkreig5frmcofvaav5o5uzdt6qchbpa2zzfmu42kf3rbmr3d6hsorgmx4
 ---
+
+[← Back to Blog Posts](/blog)
+
 # The True Cost of Custom Domains
 
 ![The True Cost of Custom Domains](https://cdn.orbiter.host/ipfs/bafkreig5frmcofvaav5o5uzdt6qchbpa2zzfmu42kf3rbmr3d6hsorgmx4)
 
-Like many things on the modern web, many people expect custom domains and SSL certificates* to be free. SSL certificates are digital certificates that web servers present to browsers. These certificates contain a public key which can be used to encrypt traffic to and from the site. It's an important part of the modern web, no doubt. 
+Like many things on the modern web, many people expect custom domains and SSL certificates* to be free. SSL certificates are digital certificates that web servers present to browsers. These certificates contain a public key which can be used to encrypt traffic to and from the site. It's an important part of the modern web, no doubt.
 
 _*(TLS is the correct actual term as SSL is deprecated but most of the web still calls them SSL certs) _
 
-But it's not free. 
+But it's not free.
 
-This is not to say that there aren't free and open source solutions for generating SSL certificates. There absolutely are, and Orbiter uses one of those solutions (Let's Encrypt). What I mean by SSL certificates not being free is that there is an overhead cost to issuing and supporting these certificates. Before diving further into this, perhaps it's important to explain how SSL certificates are generated and managed as well as how they interact with DNS resolvers. 
+This is not to say that there aren't free and open source solutions for generating SSL certificates. There absolutely are, and Orbiter uses one of those solutions (Let's Encrypt). What I mean by SSL certificates not being free is that there is an overhead cost to issuing and supporting these certificates. Before diving further into this, perhaps it's important to explain how SSL certificates are generated and managed as well as how they interact with DNS resolvers.
 
 ## Issuing and Managing TLS Certificates
 
@@ -66,18 +69,22 @@ When you change DNS records to validate domain ownership during certificate issu
 
 At Orbiter, unlike larger, venture-backed competitors, we do not offer custom domains on free plans. This is not likely to change anytime soon for one simple reason: the cost.
 
-We run a proxy server to help ensure custom domain traffic resolves to the correct Orbiter website, but we also run a server to issue and maintain SSL/TLS certificates. The cost of these servers is not a problem (at least not at the moment), so when I talk about cost, I'm not talking about it in terms of dollars and cents. 
+We run a proxy server to help ensure custom domain traffic resolves to the correct Orbiter website, but we also run a server to issue and maintain SSL/TLS certificates. The cost of these servers is not a problem (at least not at the moment), so when I talk about cost, I'm not talking about it in terms of dollars and cents.
 
-Instead, the cost comes in supporting custom domains. Re-read the last paragraph in the Issuing and Managing TLS Certificates section. TTL and DNS resolution is a real headache. Combine that with the potential for errors in SSL certificate issuance, and you end up with a situation where custom domains actually require quite a bit of customer support. 
+Instead, the cost comes in supporting custom domains. Re-read the last paragraph in the Issuing and Managing TLS Certificates section. TTL and DNS resolution is a real headache. Combine that with the potential for errors in SSL certificate issuance, and you end up with a situation where custom domains actually require quite a bit of customer support.
 
-We provide this customer support promptly and explain things in great detail for our paying customers. If there is an issue with SSL issuance, we fix it immediately. If the issue is tied to ISP (internet service providers) resolving DNS entries and TTL problems, we explain and troubleshoot as best we can until the site resolves. 
+We provide this customer support promptly and explain things in great detail for our paying customers. If there is an issue with SSL issuance, we fix it immediately. If the issue is tied to ISP (internet service providers) resolving DNS entries and TTL problems, we explain and troubleshoot as best we can until the site resolves.
 
-Custom domains are one of the last complicated parts left to getting sites online for the average user. Even with the best interfaces and tutorials or managed solutions, DNS propagation can be a massive headache. And that's why it generates support. 
+Custom domains are one of the last complicated parts left to getting sites online for the average user. Even with the best interfaces and tutorials or managed solutions, DNS propagation can be a massive headache. And that's why it generates support.
 
-We absolutely love supporting our customers, and we also understand SSL and DNS is confusing and complicated. However, were we to expand this to free customers, we would suddenly be overwhelmed with support from customers that are not paying for the time it takes to support these issues. 
+We absolutely love supporting our customers, and we also understand SSL and DNS is confusing and complicated. However, were we to expand this to free customers, we would suddenly be overwhelmed with support from customers that are not paying for the time it takes to support these issues.
 
-This is generally not a problem for our large competitors because they are perfectly happy operating at a loss in hopes of profiting from upmarket (enterprise) sales in the future. This is usually the venture capital model. 
+This is generally not a problem for our large competitors because they are perfectly happy operating at a loss in hopes of profiting from upmarket (enterprise) sales in the future. This is usually the venture capital model.
 
-So just as [I've previously written about business sustainability](https://orbiter.host/blog/expect-businesses-to-be-sustainable), Orbiter operates with the intention of being around for a VERY long time and being profitable to ensure we can keep running the service. 
+So just as [I've previously written about business sustainability](https://orbiter.host/blog/expect-businesses-to-be-sustainable), Orbiter operates with the intention of being around for a VERY long time and being profitable to ensure we can keep running the service.
 
 And that's why custom domains are only available on paid plans.
+
+---
+
+[← Back to Blog Posts](/blog)

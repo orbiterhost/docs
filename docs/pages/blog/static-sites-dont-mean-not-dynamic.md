@@ -7,6 +7,9 @@ title: 'Static Websites Don’t Mean They Can’t Be Dynamic (What?!)'
 description: 'The term static website can be confusing, but static sites can be as dynamic as you want them to be.'
 heroImage: 'https://cdn.orbiter.host/ipfs/bafybeicr7jgccyhwcvqzofjkzclzzadg3lcu7ssr4gg5uffh7qmcah6psy'
 ---
+
+[← Back to Blog Posts](/blog)
+
 # Static Websites Don’t Mean They Can’t Be Dynamic (What?!)
 
 ![Static Websites Don’t Mean They Can’t Be Dynamic (What?!)](https://cdn.orbiter.host/ipfs/bafybeicr7jgccyhwcvqzofjkzclzzadg3lcu7ssr4gg5uffh7qmcah6psy)
@@ -94,3 +97,7 @@ Static sites have many benefits, but they don’t have as many drawbacks as some
 Your sites or web apps can be static but also be dynamic. 🤯
 
 [If you’re ready to host your site with a simple upload, try Orbiter for free today!](https://orbiter.host/pricing)
+
+---
+
+[← Back to Blog Posts](/blog)

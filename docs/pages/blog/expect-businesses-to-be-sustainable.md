@@ -7,6 +7,9 @@ title: "Expect Businesses To Be Sustainable"
 description: "Orbiter is competing in a well-established space, which means we have to be affordable while maintaining sustainability."
 heroImage: "https://cdn.orbiter.host/ipfs/bafybeibnlus6rne7vgqnszmvkmkuvkfhlcdakxgpjvvrqlt2cy667xbium?img-width=750"
 ---
+
+[← Back to Blog Posts](/blog)
+
 # Expect Businesses To Be Sustainable
 
 ![Expect Businesses To Be Sustainable](https://cdn.orbiter.host/ipfs/bafybeibnlus6rne7vgqnszmvkmkuvkfhlcdakxgpjvvrqlt2cy667xbium?img-width=750)
@@ -97,3 +100,7 @@ Unfortunately, many platforms are built to lock customers in and make it hard to
 When comparing services, there are a number of factors to consider. What’s the level of sustainability, how easy is it to move between providers, and does the service feel like it’s building something for you or building something for investors. Orbiter is very affordable, but it’s not going to match pricing with companies that have raised hundreds of millions from venture capital.
 
 We hope you’ll choose sustainability.
+
+---
+
+[← Back to Blog Posts](/blog)

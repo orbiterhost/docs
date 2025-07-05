@@ -7,6 +7,9 @@ title: How To Create a Static Site Blog With a Headless CMS
 description: Static sites are great, but adding a blog often means writing in
 heroImage: https://cdn.orbiter.host/ipfs/bafkreiexfs4qkomnlwo52smse3k3sgiukyfstlovqyxij4odotajt5syhe
 ---
+
+[← Back to Blog Posts](/blog)
+
 # How To Create a Static Site Blog With a Headless CMS
 
 ![How To Create a Static Site Blog With a Headless CMS](https://cdn.orbiter.host/ipfs/bafkreiexfs4qkomnlwo52smse3k3sgiukyfstlovqyxij4odotajt5syhe)
@@ -53,3 +56,6 @@ npm install @11ty/eleventy
 Ok, now we're ready to set up a very simple site and then demonstrate how Pages CMS will make creating blog post entries dead-simple. Let's add an `index.html` file in the root of our project. You can do this via the terminal or open the project in your favorite code editor. I'll be using VS Code. Inside that file, add the following:
 
 ```markdown
+---
+
+[← Back to Blog Posts](/blog)

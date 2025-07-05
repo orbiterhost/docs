@@ -7,6 +7,9 @@ title: Natural Language Programming
 description: Vibe coding is a condescending way of describing what's actually natural language programming.
 heroImage: https://cdn.orbiter.host/ipfs/bafybeigu6gs5mx3hfhkw53wjbadipqhls3gh6arogdnvn4ylswahewdaoi
 ---
+
+[← Back to Blog Posts](/blog)
+
 # Natural Language Programming
 
 ![Natural Language Programming](https://cdn.orbiter.host/ipfs/bafybeigu6gs5mx3hfhkw53wjbadipqhls3gh6arogdnvn4ylswahewdaoi)
@@ -58,3 +61,7 @@ Orbiter is for the Natural Language Programmers.
 Orbiter is for the designers and marketers, the bloggers and TikTokers, the small business owners and the teachers.
 
 Orbiter is for everyone because everyone is a developer now.
+
+---
+
+[← Back to Blog Posts](/blog)

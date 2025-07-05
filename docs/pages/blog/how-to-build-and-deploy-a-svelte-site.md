@@ -7,6 +7,9 @@ title: "How To Build And Host a Svelte Site"
 description: "Svlete is a popular JavaScript framework that allows developers to build websites and apps. Let's host a Svelte site on Orbiter."
 heroImage: "https://cdn.orbiter.host/ipfs/bafybeicpugr4ea623jeixrstw4iqjaki3vdoo4takqz2hw57wzjpjlduce"
 ---
+
+[← Back to Blog Posts](/blog)
+
 # How To Build And Host a Svelte Site
 
 ![How To Build And Host a Svelte Site](https://cdn.orbiter.host/ipfs/bafybeicpugr4ea623jeixrstw4iqjaki3vdoo4takqz2hw57wzjpjlduce)
@@ -152,3 +155,6 @@ If you prefer a more automated deployment process, we have a great CLI that can 
 Working with Svelte can be fun and easy. Getting your Svelte site online can be even easier if you’re using Orbiter. Svelte is a powerful framework for creating websites and web apps. And if you choose to create a static site with Svelte, Orbiter is the perfect tool for hosting it.
 
 [Get started today!](https://orbiter.host)
+---
+
+[← Back to Blog Posts](/blog)

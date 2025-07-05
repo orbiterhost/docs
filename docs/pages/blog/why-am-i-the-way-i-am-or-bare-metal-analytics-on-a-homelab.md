@@ -7,6 +7,9 @@ title: 'Why Am I The Way I Am, Or Bare Metal Analytics on a Homelab'
 description: 'My wife brought home a couple of HP business machine PCs and I knew I had to build something with them.'
 heroImage: 'https://cdn.orbiter.host/ipfs/bafkreiemng6fskapxy26lajfhtg5i27e7atufx35xfexmsr6kb52rfvofu'
 ---
+
+[← Back to Blog Posts](/blog)
+
 # Why Am I The Way I Am, Or Bare Metal Analytics on a Homelab
 When we first launched Orbiter, we knew we would offer analytics. In fact, [if you use our handy versioning system, you can see the original Orbiter marketing site listed analytics as coming soon](https://marketing.orbiter.website/pricing?orbiterVersionCid=bafybeig37dtr4i3xuxskmyucazgqra7oqk24upq4tr27uoknfixy4aogsi).
 
@@ -43,9 +46,9 @@ After a few configuration changes, that problem was solved easily though. And we
 The next step was to get the analytics server code I had written on my Macbook onto this machine. Locally over my own private network at my house, this was easy enough, but I knew I needed to solve for two things:
 
 1.  I needed to make sure the server could be accessed from the outside world without exposing my entire home network to said world
-    
+
 2.  I needed to be able to SSH into the machine from anywhere in the world, again without exposing my home network or port 22 to the rest of the world
-    
+
 
 Fortunately, Cloudflare makes a great product called Tunnels that solved problem 1. And Tailscale has a secure tunnel system for SSH that solved problem number 2.
 
@@ -68,3 +71,6 @@ Is all of this a smart decision? Probably not. Did I learn some things that I wi
 At some point, we will likely have to move this to a remote VPS somewhere, but for now it's fun looking over at this random computer my wife brought home and knowing it's powering a part of Orbiter.
 
 If you'd like more stories about running bare metal implementations in your own home lab, find someone smarter than me to follow. But if you want to host your static website the easy way, [check out Orbiter today!](https://orbiter.host)
+---
+
+[← Back to Blog Posts](/blog)

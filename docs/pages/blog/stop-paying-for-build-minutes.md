@@ -7,6 +7,9 @@ title: "Stop Paying For Build Minutes"
 description: "If you rely on local builds before deploying your site, you can avoid build minutes on someone else's server."
 heroImage: "https://cdn.orbiter.host/ipfs/bafybeid7yguf6hpu6f7b4nrqrygghsvgaylfra23u2ae5lnjoxrecfrayi?img-width=750"
 ---
+
+[← Back to Blog Posts](/blog)
+
 # Stop Paying For Build Minutes
 
 ![Stop Paying For Build Minutes](https://cdn.orbiter.host/ipfs/bafybeid7yguf6hpu6f7b4nrqrygghsvgaylfra23u2ae5lnjoxrecfrayi?img-width=750)
@@ -46,3 +49,7 @@ Building isn't just easy, it can save you time and money. And what is programmin
 If you're building a static website or app, relying on a third party server to manage your builds doesn't make much sense. Build locally, never run into build minute limits, ensure your environment always works, and profit...or at least see your site online much easier.
 
 [Start deploying your local build folders with Orbiter today](https://orbiter.host).
+
+---
+
+[← Back to Blog Posts](/blog)

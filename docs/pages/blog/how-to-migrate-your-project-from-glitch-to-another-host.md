@@ -7,6 +7,9 @@ title: How To Migrate Your Project From Glitch To Another Host
 description: Glitch announced that they won't be hosting projects anymore, so
 heroImage: https://cdn.orbiter.host/ipfs/bafybeiguzqynwaj6x7jmj6az4hsqpsx7h2hpf432frzl72xlxbkdhodree
 ---
+
+[← Back to Blog Posts](/blog)
+
 # How To Migrate Your Project From Glitch To Another Host
 
 ![How To Migrate Your Project From Glitch To Another Host](https://cdn.orbiter.host/ipfs/bafybeiguzqynwaj6x7jmj6az4hsqpsx7h2hpf432frzl72xlxbkdhodree)
@@ -80,3 +83,7 @@ Finally, when you deploy, Vercel will clone the repository onto their own machin
 Glitch was a great platform designed to show off the creativity of people on the web. Unfortunately, they are ending their app and site hosting. This guide provided alternative hosting solutions from Orbiter, Netlify, and Vercel.
 
 The choice is yours, but you do have options to keep those Glitch projects alive!
+
+---
+
+[← Back to Blog Posts](/blog)

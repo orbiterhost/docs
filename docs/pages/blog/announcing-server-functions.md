@@ -7,6 +7,9 @@ title: Announcing Server Functions
 description: Server functions now allow developers to build fullstack
 heroImage: https://marketing.orbiter.host/announcing-server-functions.png
 ---
+
+[← Back to Blog Posts](/blog)
+
 # Announcing Server Functions
 
 ![Announcing Server Functions](https://marketing.orbiter.host/announcing-server-functions.png)
@@ -56,3 +59,7 @@ If you exceed your limits, we don't currently have overages. We'll work with you
 ## Getting started
 
 If you're ready to start using Orbiter Server Functions, [make sure you're on one of our paid plans](https://orbiter.host/pricing), then use the [Orbiter CLI](https://docs.orbiter.host/cli-reference/) to spin up your first project. You can have a fullstack app up and running in 30 seconds or less. We can't wait to see what you build!
+
+---
+
+[← Back to Blog Posts](/blog)

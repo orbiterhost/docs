@@ -7,6 +7,9 @@ title: "Simple Website Hosting For Small Businesses"
 description: "Just about every small business needs a website. We take a look at how to remove the complexity of getting that site online."
 heroImage: "https://cdn.orbiter.host/ipfs/bafybeic6ynjy532crf577isxld7mpckhid4f4z7csj2yowsuklha473kte?img-width=800"
 ---
+
+[← Back to Blog Posts](/blog)
+
 # Simple Website Hosting For Small Businesses
 
 ![Simple Website Hosting For Small Businesses](https://cdn.orbiter.host/ipfs/bafybeic6ynjy532crf577isxld7mpckhid4f4z7csj2yowsuklha473kte?img-width=800)
@@ -86,3 +89,7 @@ If you want to add a custom domain to your site, Orbiter makes this simple as we
 Business websites are important, but getting one made can be confusing. Getting one hosted can be complicated. This guide walks you through strategies to simplify both sides of the process.
 
 [Get started with Orbiter to host your site today](https://orbiter.host)!
+
+---
+
+[← Back to Blog Posts](/blog)

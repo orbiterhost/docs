@@ -7,6 +7,9 @@ title: "How to Host a Static Next.js App"
 description: "Next.js isn't just for servers; check out how you can host a static version of your Next.js frontend on Orbiter!"
 heroImage: "https://cdn.orbiter.host/ipfs/bafybeiafbmiunoo6tv3d5hxd4zqmrr6vd72rymsmcij6ickxkzpitslwly"
 ---
+
+[← Back to Blog Posts](/blog)
+
 # How to Host a Static Next.js App
 
 ![How to Host a Static Next.js App](https://cdn.orbiter.host/ipfs/bafybeiafbmiunoo6tv3d5hxd4zqmrr6vd72rymsmcij6ickxkzpitslwly)
@@ -68,8 +71,7 @@ This should result in a folder called `out` that has all of our HTML, CSS, and J
   autoPlay
   muted
   loop
-  playsinline
-  preload
+  playsInline
   class="not-content"
   className="w-full aspect-video"
   src="https://cdn.orbiter.host/ipfs/bafybeigzi6gyh6r63marefz35pkqlrvstmpu32hda6ojrhgytlz25jt24e"
@@ -100,3 +102,7 @@ orbiter deploy
 This will prompt you to create a new site, enter in the subdomain you want to use (e.g. `my-site.orbiter.website`), ask for your build command (e.g. `npm run build`), and your build directory, which in our case will be `out`. After running this it will save the site info in `orbiter.json` at the root of your project, so whenever you have an update you can just run `orbiter deploy` again without having to fill anything out!
 
 There you have it: a Next.js app hosted on IPFS and Base, without any fuss or waiting for builds to finish in the cloud. That’s the beauty of Orbiter! If you haven’t already, give Orbiter a shot for your next project (pun intended) and see why more and more developers are trusting it every day!
+
+---
+
+[← Back to Blog Posts](/blog)

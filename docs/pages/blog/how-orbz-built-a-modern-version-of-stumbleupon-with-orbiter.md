@@ -7,6 +7,10 @@ title: How Orbz Built A Modern Version of Stumbleupon With Orbiter
 description: Orbz is a fun, modern version of Stumbleupon built with Orbiter.
 heroImage: https://cdn.orbiter.host/ipfs/bafybeihuvn6f5tpp3qzlgqj2fe7ackfxqn6rtl5vfyudryol2gweyidn64
 ---
+
+[← Back to Blog Posts](/blog)
+
+
 # How Orbz Built A Modern Version of Stumbleupon With Orbiter
 Remember Stumbleupon? The joy of discovering new websites by randomly accessing them? Back when the web was fun and fresh, and [people surfed instead of scrolled](https://orbiter.host/blog/the-web-was-meant-for-surfing-not-scrolling). While things have changed, the web remains open, and with a little creativity, we can bring back the fun we used to have. That's exactly what Matthias Jordan is doing thanks to Orbiter.
 ### Introducing Orbz.fun
@@ -37,3 +41,6 @@ The freedom, simplicity, and support drew Matthias to Orbiter, but the return to
 Matthias was especially fond of Orbiter's ease of use and would recommend anyone hosting static sites and apps to give Orbiter a try. If you're looking to host your static sites and want to return to the simplicity and the fun of the old web, [Orbiter is for you](https://orbiter.host).
 
 And if you want to experience the nostalgia of Stumbleupon, give [Orbz](https://orbz.fun) a try!
+---
+
+[← Back to Blog Posts](/blog)

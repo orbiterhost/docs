@@ -7,6 +7,9 @@ title: "How To Build and Host a Hugo Site"
 description: "Hugo, built on top of Go, is one of the most popular static site generators on the market. Let's build a site and host it on Orbiter."
 heroImage: "https://cdn.orbiter.host/ipfs/bafybeiehuetnicapfy2q2xt3mej2ysos2bfg5pmn3hnaw7a2iahncsjhzy"
 ---
+
+[← Back to Blog Posts](/blog)
+
 # How To Build and Host a Hugo Site
 
 ![How To Build and Host a Hugo Site](https://cdn.orbiter.host/ipfs/bafybeiehuetnicapfy2q2xt3mej2ysos2bfg5pmn3hnaw7a2iahncsjhzy)
@@ -123,3 +126,6 @@ And that’s it. You’ve hosted your Hugo site on Orbiter in just a few clicks 
 ## Conclusion
 
 Hugo is one of the most popular static site generators on the market. Hosting your Hugo sites can be as simple as an upload. Go from generated site to hosted site in seconds. [Get started today!](https://orbiter.host)
+---
+
+[← Back to Blog Posts](/blog)

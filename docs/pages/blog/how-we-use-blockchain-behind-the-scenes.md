@@ -7,6 +7,9 @@ title: 'How We Use Blockchain Technology Behind the Scenes'
 description: 'Learn how Orbiter uses blockchain technology in static website hositng to prevent walled gardens'
 heroImage: '/blog/blockchain-cover.jpg'
 ---
+
+[← Back to Blog Posts](/blog)
+
 # How We Use Blockchain Technology Behind the Scenes
 
 ![How We Use Blockchain Technology Behind the Scenes](/blog/blockchain-cover.jpg)
@@ -65,3 +68,7 @@ Our goal with Orbiter is to [bring back the fun of the web](https://orbiter.host
 - Prevent walled gardens around your websites
 
 With our IPFS and blockchain stack we’re able to achieve both of these, and if you haven’t experienced it for yourself then [sign up today](https://app.orbiter.host)!
+
+---
+
+[← Back to Blog Posts](/blog)

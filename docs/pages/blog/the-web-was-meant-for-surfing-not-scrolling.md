@@ -7,6 +7,9 @@ title: 'The Web Was Made For Surfing Not Scrolling'
 description: 'The web was once a fun and open place where people would wander and wonder. Social media has negatively impacted that.'
 heroImage: '/blog/scholastic.png'
 ---
+
+[← Back to Blog Posts](/blog)
+
 # The Web Was Made For Surfing Not Scrolling
 
 ![The Web Was Made For Surfing Not Scrolling](/blog/scholastic.png)
@@ -36,3 +39,7 @@ Second, we need to ensure portability. Along with the rise in social media, we�
 Both of those points are what drive us everyday to build Orbiter. Simplifying website hosting means we can have more fun. But beyond that, we want to support open hosting. That’s why Orbiter is built on open technologies and protocols that ensure you are never locked in. [We wrote a deep dive on the technology here](https://orbiter.host/blog/how-we-use-blockchain-behind-the-scenes).
 
 If you want a web that encourages exploration, discovery, wandering, and fun, I hope you’ll join us. [Orbiter is free to start](https://orbiter.host), open, and built to bring the fun and wonder back to the web.
+
+---
+
+[← Back to Blog Posts](/blog)
