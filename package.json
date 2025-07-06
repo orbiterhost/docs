@@ -13,7 +13,7 @@
 		"glob": "^11.0.3",
 		"react": "latest",
 		"react-dom": "latest",
-		"vocs": "latest"
+		"vocs": "1.0.12"
 	},
 	"devDependencies": {
 		"@types/react": "latest",

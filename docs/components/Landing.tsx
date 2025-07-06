@@ -17,7 +17,7 @@ export function Landing() {
 
 	return (
 		<main
-			className="flex w-full h-[80vh] mx-auto flex-col items-center justify-center gap-12 p-4 relative"
+			className="flex w-full sm:h-[80vh] min-h-[80vh] mx-auto flex-col items-center justify-center gap-12 p-4 relative"
 			style={{
 				backgroundImage: "url('/bg.png')",
 				backgroundPosition: "center",
