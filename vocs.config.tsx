@@ -31,7 +31,7 @@ export default defineConfig({
 		},
 		{
 			icon: "warpcast",
-			link: "https://warpcast.com/~/channel/orbiter",
+			link: "https://farcaster.xyz/~/channel/orbiter",
 		},
 		{
 			icon: "discord",
