@@ -17,7 +17,7 @@ export function Landing() {
 
 	return (
 		<main
-			className="flex w-full sm:h-[80vh] min-h-[80vh] mx-auto flex-col items-center justify-center gap-12 p-4 relative"
+			className="flex w-full sm:h-[85vh] min-h-[85vh] mt-6 mx-auto flex-col items-center justify-center gap-12 p-4 relative"
 			style={{
 				backgroundImage: "url('/bg.png')",
 				backgroundPosition: "center",
@@ -49,6 +49,9 @@ export function Landing() {
 				</Button>
 				<Button href="/quickstart">Docs</Button>
 			</div>
+			<a className="underline font-bold" href="/about">
+				What is Orbiter?
+			</a>
 		</main>
 	);
 }

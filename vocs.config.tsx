@@ -68,6 +68,10 @@ export default defineConfig({
 			link: "/blog",
 		},
 		{
+			text: "Docs",
+			link: "/quickstart",
+		},
+		{
 			text: "Support",
 			link: "mailto:steve@orbiter.host,justin@orbiter.host",
 		},
