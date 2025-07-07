@@ -1,6 +1,6 @@
 {
-  "siteId": "cb37d777-a0da-48ab-b19c-d74cf0aa8ad1",
-  "domain": "docs-test",
+  "siteId": "bbf2dd2c-8754-493d-9061-805a32e910f1",
+  "domain": "marketing",
   "buildCommand": "bun run build",
   "buildDir": "dist"
 }
