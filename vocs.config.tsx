@@ -4,20 +4,20 @@ export default defineConfig({
 	title: "Orbiter",
 	logoUrl: "/light_text_logo.png",
 	baseUrl: "https://docs-test.orbiter.website",
-	description: "Official Documation for Orbiter",
+	description: "Open Source Web Hosting Without Walled Gardens",
 	iconUrl: "/icon.png",
 	ogImageUrl: "/og.png",
 	head({ path }) {
 		const fcData = JSON.stringify({
 			version: "next",
-			imageUrl: "https://docs.orbiter.host/image.png",
+			imageUrl: "https://orbiter.host/image.png",
 			button: {
 				title: "Orbiter Docs",
 				action: {
 					type: "launch_frame",
 					name: "Orbiter Docs",
-					url: `https://docs.orbiter.host${path}`,
-					splashImageUrl: "https://docs.orbiter.host/splash.png",
+					url: `https://orbiter.host${path}`,
+					splashImageUrl: "https://orbiter.host/splash.png",
 					splashBackgroundColor: "#121113",
 				},
 			},
