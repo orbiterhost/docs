@@ -4,7 +4,7 @@ export default function Footer() {
 			dangerouslySetInnerHTML={{
 				__html: `
         <script type="module">
-          import { sdk } from 'https://esm.sh/@farcaster/frame-sdk';
+          import { sdk } from 'https://esm.sh/@farcaster/miniapp-sdk';
           window.onload = async () => {
             try {
               await sdk.actions.ready();
