@@ -7,7 +7,7 @@
 	"frame": {
 		"version": "1",
 		"name": "Orbiter",
-		"iconUrl": "https://orbiter.host/orbiter.png",
+		"iconUrl": "https://orbiter.host/icon.png",
 		"homeUrl": "https://orbiter.host",
 		"imageUrl": "https://orbiter.host/og.png",
 		"buttonTitle": "Launch",
