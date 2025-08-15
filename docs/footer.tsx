@@ -1,6 +1,7 @@
 export default function Footer() {
 	return (
 		<div
+			//@ts-nocheck
 			dangerouslySetInnerHTML={{
 				__html: `
         <script type="module">
