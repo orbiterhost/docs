@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "./Button";
 import { Terminal } from "./Terminal";
-import NewsLetterForm from "./NewsletterForm";
+import NewsletterForm from "./NewsletterForm";
 
 export function Landing() {
 	const [copied, setCopied] = useState(false);
@@ -54,7 +54,7 @@ export function Landing() {
 			</div>
 			<div className="flex items-center flex-col gap-2 justify-center">
 				<p className="font-bold">Signup for our Newsletter</p>
-				<NewsLetterForm />
+				<NewsletterForm />
 			</div>
 		</main>
 	);

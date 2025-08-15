@@ -8,6 +8,8 @@ description: 'Pair the philosophy of "file over app" with open web hosting techn
 heroImage: 'https://cdn.orbiter.host/ipfs/bafkreidtpqz43rwtzjn4kf4g2qzm62jirm2jdmjp3y6d3ifocaq5aykfwy'
 ---
 
+import NewsletterForm from "../../components/NewsletterForm"
+
 [← Back to Blog Posts](/blog)
 
 # How to Host Obsidian Vaults on IPFS
@@ -67,6 +69,41 @@ Hosted on IPFS and Base through Orbiter!
 Now above our main header at the top of the page, below the title, paste the following:
 
 ```markdown
+---
+dg-home: true
+dg-publish: true
+---
+```
+
+This is going to add some metadata properties to your page which should now look like this:
+
+![CleanShot 2025-03-20 at 13.56.54@2x.png](https://cdn.orbiter.host/ipfs/bafybeid7txqbrfedwtwovab34wbku75cv55zwyftzh6dvnfa3yakxghoc4/6.png)
+
+`dg-home` is going to only be for our home page, and `dg-publish` is going to be for any page we want to be on our website. Make another page called “Note” and type `---` and you should see the properties come back where you can select `dg-publish`. Make sure it’s checked and write some more in there! Once you’re done and perhaps added a few more notes, it’s time to publish our site. Click on the Digital Garden plugin icon on the left sidebar:
+
+![CleanShot 2025-03-20 at 13.59.34@2x.png](https://cdn.orbiter.host/ipfs/bafybeid7txqbrfedwtwovab34wbku75cv55zwyftzh6dvnfa3yakxghoc4/7.png)
+
+This will bring up a modal where you can select the pages you want to publish, then just hit “Publish Selected”!
+
+![CleanShot 2025-03-20 at 14.00.13@2x.png](https://cdn.orbiter.host/ipfs/bafybeid7txqbrfedwtwovab34wbku75cv55zwyftzh6dvnfa3yakxghoc4/8.png)
+
+This is going to send a commit to our GitHub repo, and GitHub will take that data and update our site on Orbiter. Here’s a sneak peak at mine that I’ve been tweaking, which you can visit [here](https://digital-garden.orbiter.website).
+
+![CleanShot 2025-03-20 at 14.01.47@2x.png](https://cdn.orbiter.host/ipfs/bafybeid7txqbrfedwtwovab34wbku75cv55zwyftzh6dvnfa3yakxghoc4/9.png)
+
+## Wrapping Up
+
+Just like that we have an Obsidian vault hosted on IPFS and Base through Orbiter. Sure it does take a little work to setup initially but after it’s ready the work of adding new pages and publishing is a breeze. More importantly the philosophy of file over app is amplified to how your content is hosting.
+
+![CleanShot 2025-03-20 at 14.54.12@2x.png](https://cdn.orbiter.host/ipfs/bafybeid7txqbrfedwtwovab34wbku75cv55zwyftzh6dvnfa3yakxghoc4/10.png)
+
+Every site hosted on Orbiter exposes the the IPCM contract address and the current IPFS CID in the response headers, so at any point you can view the immutable verified content on IPFS directly, or view it through an IPFS gateway like [this one](https://bafybeig4smvmjzqfpi6uis7irxwfze5ph5vv3625el726rlpx4og6yyv7y.ipfs.dweb.link/). With a local IPFS node you could backup your own content by pinning it, or you could access someone else’s content on a peer to peer level and have the assurance that it is what it says it is. IPFS enables true file ownership over a distributed network, and it’s why Orbiter is built on open web technologies and principles. Don’t take my word for it, [launch your next site on Orbiter](https://app.orbiter.host)!
+
+<div className="flex items-center flex-col gap-2 justify-center">
+	<p className="font-bold">Signup for our Newsletter</p>
+	<NewsletterForm />
+</div>
+
 ---
 
 [← Back to Blog Posts](/blog)

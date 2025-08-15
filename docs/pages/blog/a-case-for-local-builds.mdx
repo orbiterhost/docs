@@ -8,6 +8,8 @@ date: 2025-02-18
 heroImage: "https://cdn.orbiter.host/ipfs/bafkreiaxcnsy2ylefzyib4zwlzfk3lk2fkkjkms4vxxf3ljqbauyezuufm"
 ---
 
+import NewsletterForm from "../../components/NewsletterForm"
+
 [← Back to Blog Posts](/blog)
 
 # A Case for Local Builds
@@ -26,6 +28,11 @@ When working on static sites there is generally going to be a command to create 
 By using a local build you're cutting out several steps that you would normally have to sit and wait around for. More importantly, a local build helps you determine if you code works! If you're using a library with Typescript, which most of us are, then you get immediate errors that you can fix without waiting two or three minutes for on another provider's website. Then if your build succeeds, it just needs to be hosted. That's where Orbiter comes in with the simplest option: upload it. With either our Web App or with the CLI, you can deploy your site in a matter of seconds because you're just uploading a folder of files.
 
 This is just one area of web development where we are fanatics of local-first software, and it seems like an obvious one. The next time you're thinking of waiting at a build screen, consider building it locally first, then uploading it to Orbiter!
+
+<div className="flex items-center flex-col gap-2 justify-center">
+	<p className="font-bold">Signup for our Newsletter</p>
+	<NewsletterForm />
+</div>
 
 ---
 
