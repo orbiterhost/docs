@@ -5,19 +5,23 @@ description: Learn how to use your custom domains on Orbiter
 
 # Custom Domains
 
-We know you probably love your free `.orbiter.website` domain, but the world wants to see your brand! Orbiter's Custom Domain features allows you to do that, and it's really simple to use.
+We know you probably love your free `.orbiter.website` domain, but the world wants to see your brand!
+Orbiter's Custom Domain features allows you to do that, and it's really simple to use.
 
 :::note
 Custom Domains are currently only available on the Launch or Orbit plans
 :::
 
-### Setup
+## Setup
 
-To start using Custom Domains make sure you are on a paid plan and you already have a custom domain ready to use. (We will likely add support to buy domains through Orbiter) You will also want to go ahead and deploy your first site by following the [Quickstart Guide](/quickstart)!
+To start using Custom Domains, make sure you are on a paid plan and you already have a custom domain ready to use (We will likely add support to buy domains through Orbiter at a later date).
+You will also want to go ahead and deploy your first site by following the [Quickstart Guide](/quickstart)!
 
-### Adding the Domain
+## Add the Domain
 
-To add your custom domain click on the Setting cog for the site you want to use, then type in the domain. This could either be a naked subdomain like `stevedylan.dev` or a subdomain like `demo.stevedylan.dev`. Once you haved typed it in you will see some DNS records we need to set.
+To add your custom domain click on the Setting cog for the site you want to use, then type in the domain.
+This could either be a naked subdomain like `stevedylan.dev` or a subdomain like `demo.stevedylan.dev`.
+Once you haved typed it in you will see some DNS records we need to set.
 
 <video
   autoPlay
@@ -29,7 +33,7 @@ To add your custom domain click on the Setting cog for the site you want to use,
   src="https://cdn.orbiter.host/ipfs/bafybeieu7ovzj2w2avkzmhpy2cvs7f2mxmhcdj3wknuecihxjtw5eoim4u"
 ></video>
 
-### Setting the DNS
+## Set the DNS
 
 This step might very depending who your domain provider is. You will want to go to the DNS settings there and set the record you got from Orbiter. It will like be one of the following:
 
@@ -57,6 +61,26 @@ Once you have set the records you can go back to the Orbiter app, click on the s
 Seeing a lot of spinning yellow? This is normal! DNS can take a while to propagate so be patient!
 :::
 
-### You're Done! 🚀
+## Add ENS
+
+If you would like to use a web3-based domain for your site, such as an ENS name, Orbiter makes that easy.
+Once you [have an ENS name](https://support.ens.domains/en/collections/17928212-getting-started), there are two ways you can link it to your Orbiter site:
+
+### Auto-linking via Orbiter Dashboard
+
+{/* I have attempted this, and it appeared to do *something*, but I was unable to verify that it did the thing I *wanted* it to. Further testing and verification of intended vs actual functionality required. */}
+
+- First, **connect your wallet to Orbiter, ensuring that the account holding the ENS name is currently active.**
+{/* Insert screenshots of the various steps */}
+
+- Then, from the Orbiter Dashboard, click on the gear icon for the site you wish to associate with that ENS name, and choose the `Link ENS` option:
+
+![link ENS](/img/custom-domains/set-ens-dialog.png)
+
+- Connect the ENS name
+
+### Manually setting the IPFS CID as the record in ENS
+
+## You're Done! 🚀
 
 Look at that snazzy new site, really nice! Setting up custom domains is a breeze and will likely put you in a tough spot where you can't stop buying them :)
