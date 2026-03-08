@@ -28,15 +28,7 @@ export default defineConfig({
     {
       icon: "github",
       link: "https://github.com/orbiterhost",
-    },
-    {
-      icon: "warpcast",
-      link: "https://farcaster.xyz/~/channel/orbiter",
-    },
-    {
-      icon: "discord",
-      link: "https://discord.gg/RWThJkbB4W",
-    },
+    }
   ],
   markdown: {
     code: {
