@@ -5,8 +5,8 @@ export default defineConfig({
   logoUrl: "/light_text_logo.png",
   baseUrl: "https://orbiter.host",
   description: "Open Source Web Hosting Without Walled Gardens",
-  iconUrl: "/icon.png",
-  ogImageUrl: "/og.png",
+  iconUrl: "https://orbiter.host/icon.png",
+  ogImageUrl: "https://orbiter.host/og.png",
   head({ path }) {
     const fcData = JSON.stringify({
       version: "next",
