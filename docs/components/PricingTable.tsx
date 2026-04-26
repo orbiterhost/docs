@@ -98,6 +98,7 @@ export function PricingTable() {
 							<li>Custom redirects support</li>
 							<li>Custom 404 page support</li>
 							<li>Serverless functions</li>
+							<li>Analytics</li>
 							<li>10 million requests per month</li>
 							<li>10 million ms CPU time per month</li>
 						</ul>

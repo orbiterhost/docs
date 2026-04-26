@@ -5,8 +5,8 @@ export default defineConfig({
   logoUrl: "/light_text_logo.png",
   baseUrl: "https://orbiter.host",
   description: "Open Source Web Hosting Without Walled Gardens",
-  iconUrl: "/icon.png",
-  ogImageUrl: "/og.png",
+  iconUrl: "https://orbiter.host/icon.png",
+  ogImageUrl: "https://orbiter.host/og.png",
   head({ path }) {
     const fcData = JSON.stringify({
       version: "next",
@@ -28,15 +28,7 @@ export default defineConfig({
     {
       icon: "github",
       link: "https://github.com/orbiterhost",
-    },
-    {
-      icon: "warpcast",
-      link: "https://farcaster.xyz/~/channel/orbiter",
-    },
-    {
-      icon: "discord",
-      link: "https://discord.gg/RWThJkbB4W",
-    },
+    }
   ],
   markdown: {
     code: {
