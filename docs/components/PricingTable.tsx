@@ -31,8 +31,18 @@ export function PricingTable() {
 						<p className="text-xs text-[#A3A3A4]"> $0/month </p>
 					</div>
 					<div className="p-6 pt-0 flex text-sm flex-col justify-between gap-28">
+						{/*
+							Free site creation disabled — new sites now require a paid
+							plan. TO RE-ENABLE the original free tier, swap the list below
+							back to:
+								<li>2 projects</li>
+								<li>1 team member</li>
+								<li>Free subdomain</li>
+								<li>20k requests per month</li>
+						*/}
 						<ul className="list-disc! ml-4! space-y-2">
-							<li>2 projects</li>
+							<li>Existing sites stay live</li>
+							<li>New sites require a paid plan</li>
 							<li>1 team member</li>
 							<li>Free subdomain</li>
 							<li>20k requests per month</li>
